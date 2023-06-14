@@ -1,32 +1,29 @@
-@extends('layouts.app')
-
-@section('title', 'Alternatif | Detail')
-
+@extends('layouts.master')
+@section('title')
+    @lang('translation.Datatables')
+@endsection
 @section('css')
-
+    <!-- DataTables -->
+    <link href="{{ URL::asset('/assets/libs/datatables/datatables.min.css') }}" rel="stylesheet" type="text/css" />
 @endsection
 
 @section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Detail Jalan</div>
 
+
+<h4 class="mb-0">Detail Alternatif</h4>
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+       
+               
+            </div>
+        </div>
                 <div class="panel-body">
-                    <legend>Informasi Umum</legend>
                     <div class="form-group">
                         <label for="">Nama Jalan</label>
-                        <input type="text" class="form-control" name="nama_alternatif" value="{{$nama}}" readonly>
+                        <input type="text" class="form-control" name="nama_alternatif" value="{{$nama_alternatif}}" readonly>
                     </div>
-                    <div class="form-group">
-                        <label for="">Kecamatan</label>
-                        <input type="text" class="form-control" name="alamat" value="{{$alamat}}" readonly>
-                    </div>
-                    <div class="form-group">
-                        <label for="">No. Jalan</label>
-                        <input type="text" class="form-control" name="no_hp" value="{{$no_hp}}" readonly>
-                    </div>
+                    
                     <legend>Penilaian</legend>
                     @for ($i = 0; $i < $jumlah; $i++)
                         <div class="form-group">
@@ -41,7 +38,9 @@
     </div>
 </div>
 @endsection
-
-@section('js')
-
+@section('script')
+    <script src="{{ URL::asset('/assets/libs/datatables/datatables.min.js') }}"></script>
+    <script src="{{ URL::asset('/assets/libs/jszip/jszip.min.js') }}"></script>
+    <script src="{{ URL::asset('/assets/libs/pdfmake/pdfmake.min.js') }}"></script>
+    <script src="{{ URL::asset('/assets/js/pages/datatables.init.js') }}"></script>
 @endsection

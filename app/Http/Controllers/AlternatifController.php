@@ -25,8 +25,9 @@ class AlternatifController extends Controller
     	$input = $request->all();
     	$insert = Alternative::create([
     	    'nama_alternatif' => $input['nama_alternatif'],
-    	    'alamat' => $input['alamat'],
-    	    'no_hp' => $input['no_hp'],
+            'alamat' => $input['alamat'],
+            'no_hp' => $input['no_hp'],
+    	    
     	]);
     	// if ($insert) {
     	//     return redirect('tanaman');  
@@ -48,8 +49,7 @@ class AlternatifController extends Controller
     	$input = $request->id;
     	$data = Alternative::find($input);
     	$data->nama_alternatif = $request->nama_alternatif;
-    	$data->alamat = $request->alamat;
-    	$data->no_hp = $request->no_hp;
+    
     	$data->update();
 
     	return redirect('alternatif');
@@ -94,9 +94,9 @@ class AlternatifController extends Controller
         //     echo \App\Helper::kriteria($kriteria[$i])." ".$nilai[$i];
         //     echo "<br>";
         // }
-        $nama = \App\Helper::alternatif($id);
+        $nama_alternatif = \App\Helper::alternatif($id);
         $alamat = \App\Helper::alamat($id);
         $no_hp = \App\Helper::no_hp($id);
-        return view('alternatif.detail', compact('nilai','kriteria','jumlah','nama','alamat','no_hp'));
+        return view('alternatif.detail', compact('nilai','kriteria','jumlah','nama_alternatif','alamat','no_hp'));
     }
 }

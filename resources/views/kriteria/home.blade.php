@@ -1,28 +1,37 @@
-@extends('layouts.app')
-
-@section('title', 'Kriteria')
-
+@extends('layouts.master')
+@section('title')
+    @lang('translation.Datatables')
+@endsection
 @section('css')
-
+    <!-- DataTables -->
+    <link href="{{ URL::asset('/assets/libs/datatables/datatables.min.css') }}" rel="stylesheet" type="text/css" />
 @endsection
 
 @section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Data Kriteria</div>
 
-                <div class="panel-body">
-                    <a class="btn btn-primary pull-right" data-toggle="modal" href='#modal-id'><i class="fa fa-plus"></i> Kriteria</a>
-                    <div class="modal fade" id="modal-id">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                    <h4 class="modal-title">Tambah Data Kriteria</h4>
-                                </div>
-                                <div class="modal-body">
+
+<h4 class="mb-0">Data Kriteria</h4>
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+       
+               
+            </div>
+        </div>
+
+<div class="button-items">
+                            
+
+                  <!-- Extra Large modal -->
+                  <button type="button" class="btn btn-primary waves-effect waves-light" data-bs-toggle="modal" data-bs-target=".bs-example-modal-xl">Tambah Kriteria</button>
+                  <div class="modal fade bs-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+                      <div class="modal-dialog modal-xl">
+                          <div class="modal-content">
+                              <div class="modal-header">
+                                  <h5 class="modal-title mt-0" id="myExtraLargeModalLabel">Form Kriteria</h5>
+                                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                                  </button>
+                              </div>
                                     <form action="{{ url('kriteria/tambah') }}" method="POST" role="form">
                                         {{ csrf_field() }}
                                         <legend>Form Tambah Data Kriteria</legend>
@@ -55,18 +64,19 @@
                                             </select>
                                         </div>
                                     
-                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                        <button type="submit" class="btn btn-primary">Simpan</button>
                                     </form>
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Tutup</button>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <table class="table table-hover">
+                    <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap"
+                        style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                         <thead>
-                          <tr>
+                            <tr>
                             <th>No</th>
                             <th>Kode</th>
                             <th>Nama Kriteria</th>
@@ -75,15 +85,17 @@
                             <th>Aksi</th>
                           </tr>
                         </thead>
+                        <tbody>
                         @foreach ($data as $key=>$value)
-                            <tbody>
+                        <tr>
+                            
                                 <td>{{$key+1}}</td>
                                 <td>{{$value->kode}}</td>
                                 <td>{{$value->nama_kriteria}}</td>
                                 <td>{{\App\Helper::atribut($value->atribut)}}</td>
                                 <td>{{\App\Helper::bobot($value->bobot)}}</td>
                                 <td>
-                                    <a href="{{ url('kriteria/edit/'.$value->id_kriteria) }}" class="btn btn-xs btn-info"><i class="fa fa-pencil"></i></a>
+                                    <a href="{{ url('kriteria/edit/'.$value->id_kriteria) }}" class="btn btn-xs btn-info"><i class="uil-pen"></i></a>
                                     <a href="{{ url('kriteria/hapus/'.$value->id_kriteria) }}" class="btn btn-xs btn-danger"><i class="fa fa-trash"></i></a>
                                 </td>
                             </tbody>
@@ -95,7 +107,9 @@
     </div>
 </div>
 @endsection
-
-@section('js')
-
+@section('script')
+    <script src="{{ URL::asset('/assets/libs/datatables/datatables.min.js') }}"></script>
+    <script src="{{ URL::asset('/assets/libs/jszip/jszip.min.js') }}"></script>
+    <script src="{{ URL::asset('/assets/libs/pdfmake/pdfmake.min.js') }}"></script>
+    <script src="{{ URL::asset('/assets/js/pages/datatables.init.js') }}"></script>
 @endsection

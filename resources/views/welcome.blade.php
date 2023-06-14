@@ -6,6 +6,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>Laravel</title>
+        <link href="{{asset('css/app.css')}}" rel="stylesheet">
+        <link href="{{asset('font-awesome/css/font-awesome.min.css')}}" rel="stylesheet">
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
@@ -65,6 +67,8 @@
         </style>
     </head>
     <body>
+        <br>
+        <!--
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">
@@ -76,18 +80,18 @@
                     @endif
                 </div>
             @endif
+            -->
 
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="jumbotron text-center">
+                            
+                            <h1><small>SistemPendukung Keputusan Bonus Karyawan Metode TOPSIS</small></h1>
+                            
+                            <a class="btn btn-primary" href="{{ url('/login') }}">Silakan Login</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

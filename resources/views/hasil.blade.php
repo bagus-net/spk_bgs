@@ -1,24 +1,36 @@
-@extends('layouts.app')
 
-@section('title', 'Hasil Penilaian')
-
+@extends('layouts.master')
+@section('title')
+    @lang('translation.Datatables')
+@endsection
 @section('css')
-
+    <!-- DataTables -->
+    <link href="{{ URL::asset('/assets/libs/datatables/datatables.min.css') }}" rel="stylesheet" type="text/css" />
 @endsection
 
 @section('content')
+
+
+<h4 class="mb-0">Hasil Perhitungan TOPSIS</h4>
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+       
+               
+            </div>
+        </div>
 <div class="">
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
-                <div class="panel-heading">Nilai Kecocokan Terhadap Jalan</div>
+                <div class="panel-heading">Nilai Kecocokan Terhadap Alternatif</div>
 
                 <div class="panel-body">
-                    <table class="table table-hover">
+                    <table id="example" class="table table-striped table-bordered">
                         <thead>
                           <tr>
                             <th>No</th>
-                            <th>Nama Jalan</th>
+                            <th>Nama Alternatif</th>
                             @foreach ($kriteria as $dataK)
                                 <th>{{$dataK->nama_kriteria}}</th>
                                 @php
@@ -48,7 +60,7 @@
                 <div class="panel-heading">Normalisasi</div>
 
                 <div class="panel-body">
-                    <table class="table table-hover">
+                    <table id="example1" class="table table-striped table-bordered">
                         <thead>
                           <tr>
                             <th>No</th>
@@ -82,7 +94,7 @@
                         <thead>
                           <tr>
                             <th>No</th>
-                            <th>Nama Jalan</th>
+                            <th>Nama Alternatif</th>
                             @foreach ($kriteria as $dataK)
                                 <th>{{$dataK->kode}}</th>
                             @endforeach
@@ -157,33 +169,25 @@
                         <thead>
                           <tr>
                             <th>No</th>
-                            <!--
-                            <th>Nama Alternatif</th>
-                        -->
+                            
                             <th>Jarak Solusi Ideal Positif (+)</th>
                             <th>Jarak Solusi Ideal Negatif (-)</th>
-                            <!--
-                            <th>Nilai Preferensi</th>
-                        -->
+                            
                           </tr>
                         </thead>
                             @foreach ($alternatif as $keyA => $dataA)
                             <tbody>
                                 <td>{{$keyA+1}}</td>
-                            <!--
-                                <td>{{$dataA->nama_alternatif}}</td>
-                            -->
                                 <td>{{$hasil_positif[$keyA]}}</td>
                                 <td>{{$hasil_negatif[$keyA]}}</td>
-                                <!--
-                                <td>{{$preferensi[$keyA]}}</td>
-                            -->
+                               
                             </tbody>
                             @endforeach
                       </table>
                 </div>
             </div>
         </div>
+
 
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
@@ -194,7 +198,7 @@
                         <thead>
                           <tr>
                             <th>No</th>
-                            <th>Nama Jalan</th>
+                            <th>Nama Alternatif</th>
                             <th>Nilai Preferensi</th>
                        
                           </tr>
@@ -221,11 +225,11 @@
                 <div class="panel-heading">Hasil Akhir</div>
 
                 <div class="panel-body">
-                    <table class="table table-hover">
+                    <table id="example2" class="table table-striped table-bordered">
                         <thead>
                           <tr>
                             <th>No</th>
-                            <th>Nama Jalan</th>
+                            <th>Nama Alternatif</th>
                             <th>Nilai Preferensi</th>
                             <th>Rangking</th>
                           </tr>

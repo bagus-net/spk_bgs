@@ -1,31 +1,42 @@
-@extends('layouts.app')
 
-@section('title', 'User')
-
+@extends('layouts.master')
+@section('title')
+    @lang('translation.Datatables')
+@endsection
 @section('css')
-
+    <!-- DataTables -->
+    <link href="{{ URL::asset('/assets/libs/datatables/datatables.min.css') }}" rel="stylesheet" type="text/css" />
 @endsection
 
 @section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Data User</div>
 
-                <div class="panel-body">
-                    <a class="btn btn-primary pull-right" data-toggle="modal" href='#modal-id'><i class="fa fa-plus"></i> User</a>
-                    <div class="modal fade" id="modal-id">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                    <h4 class="modal-title">Tambah Data User</h4>
-                                </div>
-                                <div class="modal-body">
+
+<h4 class="mb-0">Data User</h4>
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+       
+               
+            </div>
+        </div>
+
+
+        <div class="button-items">
+
+            <!-- Extra Large modal -->
+     <button type="button" class="btn btn-primary waves-effect waves-light" data-bs-toggle="modal" data-bs-target=".bs-example-modal-xl">Tambah User</button>
+     <div class="modal fade bs-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+         <div class="modal-dialog modal-xl">
+             <div class="modal-content">
+                 <div class="modal-header">
+                    <h5 class="modal-title mt-0" id="myExtraLargeModalLabel">Form Tambah User</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                    </button>
+                </div>
+
                                     <form action="{{ url('user/tambah') }}" method="POST" role="form">
                                         {{ csrf_field() }}
-                                        <legend>Form Tambah Data User</legend>
+
                                     
                                         <div class="form-group">
                                             <label for="">Nama Lengkap</label>
@@ -82,7 +93,7 @@
                                 <td>{{$value->email}}</td>
                                 <td>{{$value->jabatan}}</td>
                                 <td>
-                                    <a href="{{ url('user/edit/'.$value->id) }}" class="btn btn-xs btn-info"><i class="fa fa-pencil"></i></a>
+                                    <a href="{{ url('user/edit/'.$value->id) }}" class="btn btn-xs btn-info"><i class="uil-pen"></i></a>
                                     <a href="{{ url('user/hapus/'.$value->id) }}" class="btn btn-xs btn-danger"><i class="fa fa-trash"></i></a>
                                 </td>
                             </tbody>
@@ -94,7 +105,10 @@
     </div>
 </div>
 @endsection
-
-@section('js')
-
+@section('script')
+    <script src="{{ URL::asset('/assets/libs/datatables/datatables.min.js') }}"></script>
+    <script src="{{ URL::asset('/assets/libs/jszip/jszip.min.js') }}"></script>
+    <script src="{{ URL::asset('/assets/libs/pdfmake/pdfmake.min.js') }}"></script>
+    <script src="{{ URL::asset('/assets/js/pages/datatables.init.js') }}"></script>
 @endsection
+

@@ -1,22 +1,29 @@
-@extends('layouts.app')
-
-@section('title', 'Kriteria | Edit')
-
+@extends('layouts.master')
+@section('title')
+    @lang('translation.Datatables')
+@endsection
 @section('css')
-
+    <!-- DataTables -->
+    <link href="{{ URL::asset('/assets/libs/datatables/datatables.min.css') }}" rel="stylesheet" type="text/css" />
 @endsection
 
 @section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Data User</div>
+
+
+<h4 class="mb-0">Form Edit User</h4>
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+       
+               
+            </div>
+        </div>
+
 
                 <div class="panel-body">
                     <form action="{{ url('user/update') }}" method="POST" role="form">
                         {{ csrf_field() }}
-                        <legend>Form Update Data User</legend>
+
                         <input type="hidden" name="id" value="{{$data->id_kriteria}}">
                         <div class="form-group">
                             <label for="">Nama Lengkap</label>
@@ -45,7 +52,10 @@
     </div>
 </div>
 @endsection
-
-@section('js')
-
+@section('script')
+    <script src="{{ URL::asset('/assets/libs/datatables/datatables.min.js') }}"></script>
+    <script src="{{ URL::asset('/assets/libs/jszip/jszip.min.js') }}"></script>
+    <script src="{{ URL::asset('/assets/libs/pdfmake/pdfmake.min.js') }}"></script>
+    <script src="{{ URL::asset('/assets/js/pages/datatables.init.js') }}"></script>
 @endsection
+
