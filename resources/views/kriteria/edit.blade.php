@@ -1,17 +1,26 @@
-@extends('layouts.app')
-
-@section('title', 'Kriteria | Edit')
-
+@extends('layouts.master')
+@section('title')
+    @lang('translation.Datatables')
+@endsection
 @section('css')
-
+    <!-- DataTables -->
+    <link href="{{ URL::asset('/assets/libs/datatables/datatables.min.css') }}" rel="stylesheet" type="text/css" />
 @endsection
 
 @section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Data Kriteria</div>
+
+
+<h4 class="mb-0">Edit Kriteria</h4>
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+       
+               
+            </div>
+        </div>
+
+<div class="button-items">
+
 
                 <div class="panel-body">
                     <form action="{{ url('kriteria/update') }}" method="POST" role="form">

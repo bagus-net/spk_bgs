@@ -76,7 +76,7 @@
                             <td>{{$value->nama_alternatif}} <a href="{{ url('alternatif/detail/'.$value->id_alternatif) }}" class="btn btn-info-xs btn-soft-xs-info waves-effect waves-light"><i class="uil-eye"></i></a>
                             
                             <td>
-                                <a href="{{ url('alternatif/penilaian/'.$value->id_alternatif) }}" class="btn btn-xs btn-default">Penilaian</a>
+                                <a href="{{ url('alternatif/penilaian/'.$value->id_alternatif) }}" class="btn btn-warning" type="reset" value="Reset">Penilaian</a>
                                 <a href="{{ url('alternatif/edit/'.$value->id_alternatif) }}" class="btn btn-xs btn-info"><i class="uil-pen"></i></a>
                                 <a href="{{ url('alternatif/hapus/'.$value->id_alternatif) }}" class="btn btn-xs btn-danger"><i class="fa fa-trash"></i></a>
                             </td>
