@@ -68,15 +68,15 @@ class Helper extends Model
 		return $data->nama_alternatif;
 	}
 
-	public static function alamat($id)
-	{
-		$data = Alternative::find($id);
-		return $data->alamat;
-	}
+// 	public static function alamat($id)
+// 	{
+// 		$data = Alternative::find($id);
+// 		return $data->alamat;
+// 	}
 
-	public static function no_hp($id)
-	{
-		$data = Alternative::find($id);
-		return $data->no_hp;
-	}
-}
+// 	public static function no_hp($id)
+// 	{
+// 		$data = Alternative::find($id);
+// 		return $data->no_hp;
+// 	}
+ }
