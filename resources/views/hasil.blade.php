@@ -65,7 +65,7 @@
                           <tr>
                             <th>No</th>
                             {{-- <th>Kode</th> --}}
-                            <th>Nama Jalan</th>
+                            <th>Nama Alternatif</th>
                             @foreach ($kriteria as $dataK)
                                 <th>{{$dataK->kode}}</th>
                             @endforeach
