@@ -80,12 +80,12 @@
                 </button>
                 <div class="dropdown-menu dropdown-menu-end">
                     <!-- item-->
-                    <a class="dropdown-item" href="/home"><i class="uil uil-user-circle font-size-18 align-middle text-muted me-1"></i> <span class="align-middle">@lang('Dashboard')</span></a>
+                    <a class="dropdown-item" href="/home"><i class="uil-home-alt font-size-18 align-middle text-muted me-1"></i> <span class="align-middle">@lang(   'Dashboard')</span></a>
                     
                     <form action="/logout" method="post">
                         {{ csrf_field() }}
 
-                    <button type ="submit" class="dropdown-item"><i class="bibi-box-arrow-right"></i> Logout </button></span></a>
+                    <button type ="submit" class="dropdown-item"><i class="uil uil-sign-out-alt"></i> Logout </button></span></a>
                     </form>
                     
                    
