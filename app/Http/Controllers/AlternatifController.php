@@ -25,8 +25,8 @@ class AlternatifController extends Controller
     	$input = $request->all();
     	$insert = Alternative::create([
     	    'nama_alternatif' => $input['nama_alternatif'],
-            'alamat' => $input['alamat'],
-            'no_hp' => $input['no_hp'],
+            // 'alamat' => $input['alamat'],
+            // 'no_hp' => $input['no_hp'],
     	    
     	]);
     	// if ($insert) {

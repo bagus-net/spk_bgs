@@ -224,9 +224,9 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Hasil Akhir</div>
 
-                <div class="panel-body">
-                    <table id="example2" class="table table-striped table-bordered">
-                        <thead>
+                <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap"
+                style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                <thead>
                           <tr>
                             <th>No</th>
                             <th>Nama Alternatif</th>
@@ -252,7 +252,9 @@
     </div>
 </div>
 @endsection
-
-@section('js')
-
+@section('script')
+    <script src="{{ URL::asset('/assets/libs/datatables/datatables.min.js') }}"></script>
+    <script src="{{ URL::asset('/assets/libs/jszip/jszip.min.js') }}"></script>
+    <script src="{{ URL::asset('/assets/libs/pdfmake/pdfmake.min.js') }}"></script>
+    <script src="{{ URL::asset('/assets/js/pages/datatables.init.js') }}"></script>
 @endsection
