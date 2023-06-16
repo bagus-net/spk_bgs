@@ -3,7 +3,7 @@
 
     <!-- LOGO -->
     <div class="navbar-brand-box">
-        <a href="{{url('dashboard')}}" class="logo logo-dark">
+        <a href="{{url('home')}}" class="logo logo-dark">
             <span class="logo-sm">
                 <img src="{{ URL::asset('/assets/images/mgm.png') }}" alt="" height="50">
             </span>
@@ -12,7 +12,7 @@
             </span>
         </a>
 
-        <a href="{{url('dashboard')}}" class="logo logo-light">
+        <a href="{{url('home')}}" class="logo logo-light">
             <span class="logo-sm">
                 <img src="{{ URL::asset('/assets/images/mgm.png') }}" alt="" height="50">
             </span>
