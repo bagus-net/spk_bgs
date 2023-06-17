@@ -117,6 +117,7 @@
                     <li><a href={{ url('/alternatif') }}>@lang('Data Alternatif')</a></li>
                     <li><a href={{ url('/kriteria')  }}>@lang('Data Kriteria')</a></li>
                     <li><a href={{ url('/hasil')  }}>@lang('Hasil TOPSIS')</a></li>
+                    <li><a href={{ url('/hasilwp')  }}>@lang('Hasil WP')</a></li>
                     {{-- <li><a href={{ url('/kriteria')  }}>@lang('Kriteria')</a></li> --}}
                     {{-- <li><a href={{ route('bobot.list') }}>@lang('Bobot')</a></li> --}}
                     {{-- <li><a href={{ route('users.list') }}>@lang('Users')</a></li>                     --}}

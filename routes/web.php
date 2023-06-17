@@ -49,3 +49,4 @@ Route::group(['prefix' => 'user'], function () {
 });
 
 Route::get('hasil', 'HasilController@index');
+Route::get('hasilwp', 'HasilWPController@index');
