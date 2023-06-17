@@ -232,25 +232,30 @@
                             <th>Nama Alternatif</th>
                             <th>Nilai Preferensi</th>
                             <th>Rangking</th>
-                          </tr>
-                        </thead>
+                        </tr>
+                    </thead>
+                    <tbody>
                             @foreach ($rangking as $key => $data)
-                            <tbody>
+                            <tr>
                                 <td>{{$key+1}}</td>
-                                
                                 <td>{{\App\Helper::alternatif($data->alternatif)}}</td>
-                        
                                 <td>{{$data->hasil}}</td>
                                 <td>{{$key+1}}</td>
-                            </tbody>
+                                
+                            </form>
+                        </td>
+    
+                       
+                    </tr>
+                           
                             @endforeach
+                        </tbody>
                       </table>
+                    </div>
                 </div>
             </div>
-        </div>
-
-    </div>
-</div>
+        </div> <!-- end col -->
+    </div> <!-- end row -->
 @endsection
 @section('script')
     <script src="{{ URL::asset('/assets/libs/datatables/datatables.min.js') }}"></script>

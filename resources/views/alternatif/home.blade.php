@@ -36,7 +36,7 @@
                                     
                                         <div class="form-group">
                                             <label for="">Nama Alternatif</label>
-                                            <input type="text" class="form-control" name="nama_alternatif" id="" >
+                                            <input type="text" class="form-control" name="nama_alternatif" id="nama_alternatif" >
                                         </div>
 
                                         {{-- <div class="form-group">
