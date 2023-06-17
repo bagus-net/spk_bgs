@@ -6,7 +6,9 @@
  <script src="{{ URL::asset('/assets/libs/node-waves/node-waves.min.js')}}"></script>
  <script src="{{ URL::asset('/assets/libs/waypoints/waypoints.min.js')}}"></script>
  <script src="{{ URL::asset('/assets/libs/jquery-counterup/jquery-counterup.min.js')}}"></script>
+ <script src="{{ URL::asset('/assets/libs/datatables/datatables.min.js') }}"></script>
  
+    
 
  @yield('script')
 

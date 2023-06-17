@@ -1,4 +1,3 @@
-
 @extends('layouts.master')
 @section('title')
     @lang('translation.Datatables')
@@ -60,18 +59,25 @@
                             </div>
                         </div>
                     </div>
+
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                <div class="table-responsive">    
                     <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap"
                     style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                          
                     <thead>
                           <tr>
                             <th>No</th>
                             <th>Nama Alternatif</th>
-                           
                             <th>Aksi</th>
                           </tr>
                         </thead>
-                        @foreach ($data as $key=>$value)
                         <tbody>
+                        @foreach ($data as $key=>$value)
+                        <tr>
                             <td>{{$key+1}}</td>
                             <td>{{$value->nama_alternatif}} <a href="{{ url('alternatif/detail/'.$value->id_alternatif) }}" class="btn btn-info-xs btn-soft-xs-info waves-effect waves-light"><i class="uil-eye"></i></a>
                             
@@ -79,33 +85,21 @@
                                 <a href="{{ url('alternatif/penilaian/'.$value->id_alternatif) }}" class="btn btn-warning" type="reset" value="Reset">Penilaian</a>
                                 <a href="{{ url('alternatif/edit/'.$value->id_alternatif) }}" class="btn btn-xs btn-info"><i class="uil-pen"></i></a>
                                 <a href="{{ url('alternatif/hapus/'.$value->id_alternatif) }}" class="btn btn-xs btn-danger"><i class="fa fa-trash"></i></a>
-                            </td>
-                            {{-- <div class="modal fade" id="modal_{{$value->id_alternatif}}">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                            <h4 class="modal-title">Data Jalan</h4>
-                                        </div>
-                                        <div class="modal-body">
-                                            <legend>Nama : {{$value->nama_alternatif}}</legend>
-                                            <legend>Alamat : {{$value->alamat}}</legend>
-                                            <legend>No.HP : {{$value->no_hp}}</legend>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> --}}
-                        </tbody>
-                        @endforeach
-                      </table>
-                </div>
-            </div>
+
+                        </form>
+                    </td>
+
+                   
+                </tr>
+                    @endforeach
+                   
+                </tbody>
+            </table>
+        </div>
         </div>
     </div>
-</div>
+</div> <!-- end col -->
+</div> <!-- end row -->
 @endsection
 @section('script')
     <script src="{{ URL::asset('/assets/libs/datatables/datatables.min.js') }}"></script>

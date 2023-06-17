@@ -7,7 +7,10 @@
     <link href="{{ URL::asset('/assets/libs/datatables/datatables.min.css') }}" rel="stylesheet" type="text/css" />
 @endsection
 
+
 @section('content')
+ 
+    
 
 
 <h4 class="mb-0">Data Kriteria</h4>
@@ -38,15 +41,15 @@
                                     
                                         <div class="form-group">
                                             <label for="">Kode</label>
-                                            <input type="text" class="form-control" name="kode" id="">
+                                            <input type="text" class="form-control" name="kode" id="kode">
                                         </div>
                                         <div class="form-group">
                                             <label for="">Nama Kriteria</label>
-                                            <input type="text" class="form-control" name="nama_kriteria" id="" >
+                                            <input type="text" class="form-control" name="nama_kriteria" id="nama_kriteria" >
                                         </div>
                                         <div class="form-group">
                                             <label for="">Atribut</label>
-                                            <select class="form-control" name="atribut">
+                                            <select class="form-control" name="atribut"  id="atribut">
                                                 <option value="">-- Silahkan Pilih --</option>
                                                 <option value="1">Benefit</option>
                                                 <option value="2">Cost</option>
@@ -54,7 +57,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label for="">Bobot</label>
-                                            <select class="form-control" name="bobot">
+                                            <select class="form-control" name="bobot" id="bobot">>
                                                 <option value="">-- Silahkan Pilih --</option>
                                                 <option value="1">Tidak Penting</option>
                                                 <option value="2">Kurang Penting</option>
@@ -73,8 +76,16 @@
                             </div>
                         </div>
                     </div>
+
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                <div class="table-responsive">         
+             
                     <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap"
                         style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                              
                         <thead>
                             <tr>
                             <th>No</th>
@@ -95,21 +106,28 @@
                                 <td>{{\App\Helper::atribut($value->atribut)}}</td>
                                 <td>{{\App\Helper::bobot($value->bobot)}}</td>
                                 <td>
+                                 
                                     <a href="{{ url('kriteria/edit/'.$value->id_kriteria) }}" class="btn btn-xs btn-info"><i class="uil-pen"></i></a>
                                     <a href="{{ url('kriteria/hapus/'.$value->id_kriteria) }}" class="btn btn-xs btn-danger"><i class="fa fa-trash"></i></a>
-                                </td>
-                            </tbody>
-                        @endforeach
-                      </table>
+                                </form>
+                            </td>
+
+                           
+                        </tr>
+                            @endforeach
+                           
+                        </tbody>
+                    </table>
+                </div>
                 </div>
             </div>
-        </div>
-    </div>
-</div>
+        </div> <!-- end col -->
+    </div> <!-- end row -->
 @endsection
 @section('script')
     <script src="{{ URL::asset('/assets/libs/datatables/datatables.min.js') }}"></script>
     <script src="{{ URL::asset('/assets/libs/jszip/jszip.min.js') }}"></script>
     <script src="{{ URL::asset('/assets/libs/pdfmake/pdfmake.min.js') }}"></script>
     <script src="{{ URL::asset('/assets/js/pages/datatables.init.js') }}"></script>
+   
 @endsection
