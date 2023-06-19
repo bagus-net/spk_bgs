@@ -37,7 +37,7 @@ class HasilWPController extends Controller
         for ($i=0;$i<$jmlh_kriteria;$i++){
             for ($j=0;$j<$jmlh_alternatif;$j++){
                 $nilai[$j][$i] = \App\Helper::nilai($id_alternatif[$j],$id_kriteria[$i]);
-                $pangkat_kriteria[$j][$i] = pow($nilai[$j][$i], 2);
+                $pangkat_kriteria[$j][$i] = pow($nilai[$j][$i], 1);
             }
         }
         // dd($pangkat_kriteria);
@@ -51,6 +51,7 @@ class HasilWPController extends Controller
             }
         }
 
+        
         //Tahap 3 = Normalisasi
         for ($i=0;$i<$jmlh_kriteria;$i++){
             for ($j=0;$j<$jmlh_alternatif;$j++){
