@@ -11,7 +11,7 @@
 @section('content')
 
 
-<h4 class="mb-0">Hasil Perhitungan Weighted</h4>
+<h4 class="mb-0">Hasil Perhitungan Weighted Product</h4>
 <div class="row">
     <div class="col-12">
         <div class="card">
@@ -23,39 +23,93 @@
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
-                <div class="panel-heading">Nilai Kecocokan Terhadap Alternatif</div>
+                <div class="panel-heading">Tabel Bobot Kepentingan</div>
 
                 <div class="panel-body">
                     <table id="example" class="table table-striped table-bordered">
                         <thead>
-                          <tr>
-                            <th>No</th>
-                            <th>Nama Alternatif</th>
-                            @foreach ($kriteria as $dataK)
-                                <th>{{$dataK->nama_kriteria}}</th>
-                                @php
-                                    $id[] = $dataK->id_kriteria;
-                                @endphp
-                            @endforeach
+                            <tr>
+                            <th>Nama Kriteria</th>
+                            <th>Bobot</th>
                           </tr>
                         </thead>
-                            @foreach ($alternatif as $keyT => $dataT)
-                            <tbody>
-                                <td>{{$keyT+1}}</td>
-                                <td>{{$dataT->nama_alternatif}}</td>
-                                @foreach ($kriteria as $keyK => $dataK)
-                                    <td>
-                                        {{\App\Helper::nilai($dataT->id_alternatif,$id[$keyK])}}
-                                    </td>
-                                @endforeach
-                            </tbody>
-                            @endforeach
-                      </table>
+                        <tbody>
+                        @foreach ($kriteria as $key=>$v)
+                                <td>{{$v->nama_kriteria}}</td>
+                                <td>{{\App\Helper::bobot($value->bobot)}}
+                                
+                                    @endforeach
+                                </td>
+                               
                 </div>
             </div>
         </div>
 
-        <div class="col-md-10 col-md-offset-1">
+
+        <div class="">
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Nilai Kecocokan Terhadap Alternatif</div>
+        
+                        <div class="panel-body">
+                            <table id="example" class="table table-striped table-bordered">
+                                <thead>
+                                  <tr>
+                                    <th>No</th>
+                                    <th>Nama Alternatif</th>
+                                    @foreach ($kriteria as $dataK)
+                                        <th>{{$dataK->nama_kriteria}}</th>
+                                        @php
+                                            $id[] = $dataK->id_kriteria;
+                                        @endphp
+                                    @endforeach
+                                  </tr>
+                                </thead>
+                                    @foreach ($alternatif as $keyT => $dataT)
+                                    <tbody>
+                                        <td>{{$keyT+1}}</td>
+                                        <td>{{$dataT->nama_alternatif}}</td>
+                                        @foreach ($kriteria as $keyK => $dataK)
+                                            <td>
+                                                {{\App\Helper::nilai($dataT->id_alternatif,$id[$keyK])}}
+                                            </td>
+                                        @endforeach
+                                    </tbody>
+                                    @endforeach
+                              </table>
+                        </div>
+                    </div>
+                </div>
+
+        {{-- <div class="col-md-10 col-md-offset-1">
+            <div class="panel panel-default">
+                <div class="panel-heading">Perhitungan Bobot Kepentingan</div>
+
+                <div class="panel-body">
+                    <table class="table table-hover">
+                        <thead>
+                          <tr>
+                            <th>No</th>
+                            
+                            <th>Kepentingan</th>
+                            <th>Bobot Kepentingan</th>
+                            
+                          </tr>
+                        </thead>
+                        @foreach($kriteria as $key => $v)
+                        <td>{{$v->kepentingan}}</td>
+                        @endforeach
+                        <td>{{$tkep}}</td>
+                      </tr>
+                            </tbody>
+                            @endforeach
+                      </table>
+                </div>
+            </div> --}}
+        </div>
+
+        {{-- <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
                 <div class="panel-heading">Normalisasi</div>
 
@@ -64,7 +118,7 @@
                         <thead>
                           <tr>
                             <th>No</th>
-                            {{-- <th>Kode</th> --}}
+                            {{-- <th>Kode</th> --}
                             <th>Nama Alternatif</th>
                             @foreach ($kriteria as $dataK)
                                 <th>{{$dataK->kode}}</th>
@@ -244,11 +298,11 @@
                                 
                             </form>
                         </td>
-    
+     --}}
                        
                     </tr>
                            
-                            @endforeach
+                            {{-- @endforeach --}}
                         </tbody>
                       </table>
                     </div>

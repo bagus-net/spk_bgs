@@ -1,280 +1,249 @@
--- phpMyAdmin SQL Dump
--- version 5.2.0
--- https://www.phpmyadmin.net/
---
--- Host: 127.0.0.1
--- Generation Time: Jun 08, 2023 at 02:27 PM
--- Server version: 10.4.27-MariaDB
--- PHP Version: 7.4.33
+/*
+ Navicat Premium Data Transfer
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-START TRANSACTION;
-SET time_zone = "+00:00";
+ Source Server         : bagus
+ Source Server Type    : MySQL
+ Source Server Version : 50742
+ Source Host           : localhost:3306
+ Source Schema         : db_spklaravel
 
+ Target Server Type    : MySQL
+ Target Server Version : 50742
+ File Encoding         : 65001
 
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+ Date: 19/06/2023 15:23:39
+*/
 
---
--- Database: `spklaravel`
---
+SET NAMES utf8mb4;
+SET FOREIGN_KEY_CHECKS = 0;
 
--- --------------------------------------------------------
+-- ----------------------------
+-- Table structure for alternatives
+-- ----------------------------
+DROP TABLE IF EXISTS `alternatives`;
+CREATE TABLE `alternatives`  (
+  `id_alternatif` int(10) NOT NULL AUTO_INCREMENT,
+  `nama_alternatif` varchar(225) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+  PRIMARY KEY (`id_alternatif`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 14 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
 
---
--- Table structure for table `alternatives`
---
+-- ----------------------------
+-- Records of alternatives
+-- ----------------------------
+INSERT INTO `alternatives` VALUES (4, 'PC Rakitan Home & School INTEL |P.G G6405| - | 8GB | 120gbSSD \r\n');
+INSERT INTO `alternatives` VALUES (5, 'PC Rakitan Home & School AMD | R3 3200G | - | 8GB |120gbSSD \r\n');
+INSERT INTO `alternatives` VALUES (6, 'PC Rakitan Admin & Office AMD | R3 3200G | - | 8GB |120gbSSD \r\n');
+INSERT INTO `alternatives` VALUES (7, 'PC Rakitan Medium AMD | R3 4350G | - | 8GB | 256gbSSD');
+INSERT INTO `alternatives` VALUES (8, 'PC Rakitan Enter Upstream AMD | R3 3200G | - | 8GB |256gbSSD ');
+INSERT INTO `alternatives` VALUES (9, 'IMBA Legacy PC | i5-750 | GT 7302gb | 8GB | 120gbSSD | Multimedia Desktop');
+INSERT INTO `alternatives` VALUES (10, 'Mini PC Haswel Gen 4 | i3-4160 | - | 8GB | 512gbSSD ');
+INSERT INTO `alternatives` VALUES (11, 'PC Gaming |P.G G6405| SSD 240Gb | Ram 8Gb | VGA 2GB DDR5');
+INSERT INTO `alternatives` VALUES (12, 'Pc Rakitan Corei3 | i3-4130 | GT1030 | 8GB | 256gbSSD ');
+INSERT INTO `alternatives` VALUES (13, 'PC GAMING RAKITAN OFFICE|i3-540|VGA 2GB|8GB|120GB');
 
-CREATE TABLE `alternatives` (
-  `id_alternatif` int(10) NOT NULL,
-  `nama_alternatif` varchar(225) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+-- ----------------------------
+-- Table structure for criterias
+-- ----------------------------
+DROP TABLE IF EXISTS `criterias`;
+CREATE TABLE `criterias`  (
+  `id_kriteria` int(10) NOT NULL AUTO_INCREMENT,
+  `kode` varchar(225) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+  `nama_kriteria` varchar(225) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+  `atribut` enum('1','2') CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+  `bobot` enum('1','2','3','4','5') CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+  PRIMARY KEY (`id_kriteria`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
 
---
--- Dumping data for table `alternatives`
---
+-- ----------------------------
+-- Records of criterias
+-- ----------------------------
+INSERT INTO `criterias` VALUES (1, 'c1', 'processor', '1', '5');
+INSERT INTO `criterias` VALUES (2, 'c2', 'Ram', '1', '3');
+INSERT INTO `criterias` VALUES (3, 'c3', 'Harga', '2', '5');
+INSERT INTO `criterias` VALUES (4, 'c4', 'Storage', '1', '3');
+INSERT INTO `criterias` VALUES (5, 'c5', 'VGA', '1', '2');
 
-INSERT INTO `alternatives` (`id_alternatif`, `nama_alternatif`) VALUES
-(17, 'PC Rakitan Home & School INTEL'),
-(18, 'PC Rakitan Home & School AMD');
+-- ----------------------------
+-- Table structure for hasils
+-- ----------------------------
+DROP TABLE IF EXISTS `hasils`;
+CREATE TABLE `hasils`  (
+  `id_hasil` int(11) NOT NULL,
+  `alternatif` varchar(255) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
+  `hasil` float NULL DEFAULT NULL,
+  PRIMARY KEY (`id_hasil`) USING BTREE
+) ENGINE = InnoDB CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
 
--- --------------------------------------------------------
+-- ----------------------------
+-- Records of hasils
+-- ----------------------------
 
---
--- Table structure for table `criterias`
---
+-- ----------------------------
+-- Table structure for migrations
+-- ----------------------------
+DROP TABLE IF EXISTS `migrations`;
+CREATE TABLE `migrations`  (
+  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `migration` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `batch` int(11) NOT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Dynamic;
 
-CREATE TABLE `criterias` (
-  `id_kriteria` int(10) NOT NULL,
-  `kode` varchar(225) NOT NULL,
-  `nama_kriteria` varchar(225) NOT NULL,
-  `atribut` enum('1','2') NOT NULL,
-  `bobot` enum('1','2','3','4','5') NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+-- ----------------------------
+-- Records of migrations
+-- ----------------------------
+INSERT INTO `migrations` VALUES (1, '2014_10_12_000000_create_users_table', 1);
+INSERT INTO `migrations` VALUES (2, '2014_10_12_100000_create_password_resets_table', 1);
 
---
--- Dumping data for table `criterias`
---
-
-INSERT INTO `criterias` (`id_kriteria`, `kode`, `nama_kriteria`, `atribut`, `bobot`) VALUES
-(1, 'c1', 'processor', '1', '5'),
-(2, 'c2', 'Ram', '1', '3'),
-(3, 'c3', 'Harga', '2', '5'),
-(4, 'c4', 'Storage', '1', '3'),
-(5, 'c5', 'VGA', '1', '2');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `migrations`
---
-
-CREATE TABLE `migrations` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `migration` varchar(255) NOT NULL,
-  `batch` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Dumping data for table `migrations`
---
-
-INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
-(1, '2014_10_12_000000_create_users_table', 1),
-(2, '2014_10_12_100000_create_password_resets_table', 1);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `password_resets`
---
-
-CREATE TABLE `password_resets` (
-  `email` varchar(255) NOT NULL,
-  `token` varchar(255) NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `relations`
---
-
-CREATE TABLE `relations` (
-  `id_relasi` int(10) NOT NULL,
-  `alternatif` varchar(225) NOT NULL,
-  `kriteria` varchar(225) NOT NULL,
-  `nilai` float NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
-
---
--- Dumping data for table `relations`
---
-
-INSERT INTO `relations` (`id_relasi`, `alternatif`, `kriteria`, `nilai`) VALUES
-(51, '11', '1', 2),
-(52, '11', '2', 3),
-(53, '11', '3', 3675000),
-(54, '11', '4', 2),
-(55, '11', '5', 3),
-(56, '12', '1', 3),
-(57, '12', '2', 3),
-(58, '12', '3', 4670000),
-(59, '12', '4', 2),
-(60, '12', '5', 3),
-(61, '13', '1', 3),
-(62, '13', '2', 3),
-(63, '13', '3', 2699000),
-(64, '13', '4', 1),
-(65, '13', '5', 3),
-(66, '17', '1', 2),
-(67, '17', '2', 3),
-(68, '17', '3', 2809000),
-(69, '17', '4', 1),
-(70, '17', '5', 1),
-(71, '18', '1', 3),
-(72, '18', '2', 3),
-(73, '18', '3', 3117000),
-(74, '18', '4', 1),
-(75, '18', '5', 1);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `results`
---
-
-CREATE TABLE `results` (
-  `id_result` int(10) NOT NULL,
-  `alternatif` varchar(225) NOT NULL,
-  `hasil` float NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
-
---
--- Dumping data for table `results`
---
-
-INSERT INTO `results` (`id_result`, `alternatif`, `hasil`) VALUES
-(17, '17', 0),
-(18, '18', 1);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `users`
---
-
-CREATE TABLE `users` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `email` varchar(255) NOT NULL,
-  `jabatan` enum('admin','kepala_bidang') NOT NULL,
-  `password` varchar(255) NOT NULL,
-  `remember_token` varchar(100) DEFAULT NULL,
+-- ----------------------------
+-- Table structure for password_resets
+-- ----------------------------
+DROP TABLE IF EXISTS `password_resets`;
+CREATE TABLE `password_resets`  (
+  `email` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `token` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+  INDEX `password_resets_email_index`(`email`) USING BTREE,
+  INDEX `password_resets_token_index`(`token`) USING BTREE
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Dynamic;
 
---
--- Dumping data for table `users`
---
+-- ----------------------------
+-- Records of password_resets
+-- ----------------------------
 
-INSERT INTO `users` (`id`, `name`, `email`, `jabatan`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(3, 'bagus', 'bagussetyawan551@gmail.com', 'admin', '$2y$10$W7ViBUBAWZ1wTHr/0vIctuv5BpSYcpBIUsSeSad.lQhoMTdiT5iUW', 'vzy3kPUrS50QtxKnjMoOhArNlxUfGG6UhthMMlBXT0ONT1QYeo3urjNhocOh', '2023-06-05 03:42:27', '2023-06-05 05:05:33'),
-(4, 'user', 'user@gmail.com', 'admin', '$2y$10$dxkY41cJ8Xr6JzDY9TKEMO97.kerqctm91hru.Zv.IHO0zaDGYQIu', NULL, '2023-06-05 04:45:24', '2023-06-05 04:45:24');
+-- ----------------------------
+-- Table structure for relations
+-- ----------------------------
+DROP TABLE IF EXISTS `relations`;
+CREATE TABLE `relations`  (
+  `id_relasi` int(10) NOT NULL AUTO_INCREMENT,
+  `alternatif` varchar(225) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+  `kriteria` varchar(225) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+  `nilai` float NOT NULL,
+  PRIMARY KEY (`id_relasi`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 121 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
 
---
--- Indexes for dumped tables
---
+-- ----------------------------
+-- Records of relations
+-- ----------------------------
+INSERT INTO `relations` VALUES (51, '11', '1', 2);
+INSERT INTO `relations` VALUES (52, '11', '2', 3);
+INSERT INTO `relations` VALUES (53, '11', '3', 2);
+INSERT INTO `relations` VALUES (54, '11', '4', 2);
+INSERT INTO `relations` VALUES (55, '11', '5', 3);
+INSERT INTO `relations` VALUES (56, '12', '1', 3);
+INSERT INTO `relations` VALUES (57, '12', '2', 3);
+INSERT INTO `relations` VALUES (58, '12', '3', 1);
+INSERT INTO `relations` VALUES (59, '12', '4', 2);
+INSERT INTO `relations` VALUES (60, '12', '5', 3);
+INSERT INTO `relations` VALUES (61, '13', '1', 3);
+INSERT INTO `relations` VALUES (62, '13', '2', 3);
+INSERT INTO `relations` VALUES (63, '13', '3', 4);
+INSERT INTO `relations` VALUES (64, '13', '4', 1);
+INSERT INTO `relations` VALUES (65, '13', '5', 3);
+INSERT INTO `relations` VALUES (66, '17', '1', 2);
+INSERT INTO `relations` VALUES (67, '17', '2', 3);
+INSERT INTO `relations` VALUES (68, '17', '3', 4);
+INSERT INTO `relations` VALUES (69, '17', '4', 1);
+INSERT INTO `relations` VALUES (70, '17', '5', 1);
+INSERT INTO `relations` VALUES (71, '18', '1', 3);
+INSERT INTO `relations` VALUES (72, '18', '2', 3);
+INSERT INTO `relations` VALUES (73, '18', '3', 2);
+INSERT INTO `relations` VALUES (74, '18', '4', 1);
+INSERT INTO `relations` VALUES (75, '18', '5', 1);
+INSERT INTO `relations` VALUES (76, '1', '1', 2);
+INSERT INTO `relations` VALUES (77, '1', '2', 3);
+INSERT INTO `relations` VALUES (78, '1', '3', 4);
+INSERT INTO `relations` VALUES (79, '1', '4', 5);
+INSERT INTO `relations` VALUES (80, '1', '5', 4);
+INSERT INTO `relations` VALUES (81, '3', '1', 4);
+INSERT INTO `relations` VALUES (82, '3', '2', 3);
+INSERT INTO `relations` VALUES (83, '3', '3', 3);
+INSERT INTO `relations` VALUES (84, '3', '4', 2);
+INSERT INTO `relations` VALUES (85, '3', '5', 2);
+INSERT INTO `relations` VALUES (86, '4', '1', 2);
+INSERT INTO `relations` VALUES (87, '4', '2', 3);
+INSERT INTO `relations` VALUES (88, '4', '3', 4);
+INSERT INTO `relations` VALUES (89, '4', '4', 1);
+INSERT INTO `relations` VALUES (90, '4', '5', 1);
+INSERT INTO `relations` VALUES (91, '5', '1', 3);
+INSERT INTO `relations` VALUES (92, '5', '2', 3);
+INSERT INTO `relations` VALUES (93, '5', '3', 3);
+INSERT INTO `relations` VALUES (94, '5', '4', 1);
+INSERT INTO `relations` VALUES (95, '5', '5', 1);
+INSERT INTO `relations` VALUES (96, '6', '1', 3);
+INSERT INTO `relations` VALUES (97, '6', '2', 3);
+INSERT INTO `relations` VALUES (98, '6', '3', 3);
+INSERT INTO `relations` VALUES (99, '6', '4', 1);
+INSERT INTO `relations` VALUES (100, '6', '5', 1);
+INSERT INTO `relations` VALUES (101, '7', '1', 3);
+INSERT INTO `relations` VALUES (102, '7', '2', 3);
+INSERT INTO `relations` VALUES (103, '7', '3', 1);
+INSERT INTO `relations` VALUES (104, '7', '4', 2);
+INSERT INTO `relations` VALUES (105, '7', '5', 1);
+INSERT INTO `relations` VALUES (106, '8', '1', 3);
+INSERT INTO `relations` VALUES (107, '8', '2', 3);
+INSERT INTO `relations` VALUES (108, '8', '3', 1);
+INSERT INTO `relations` VALUES (109, '8', '4', 2);
+INSERT INTO `relations` VALUES (110, '8', '5', 1);
+INSERT INTO `relations` VALUES (111, '9', '1', 4);
+INSERT INTO `relations` VALUES (112, '9', '2', 3);
+INSERT INTO `relations` VALUES (113, '9', '3', 2);
+INSERT INTO `relations` VALUES (114, '9', '4', 1);
+INSERT INTO `relations` VALUES (115, '9', '5', 3);
+INSERT INTO `relations` VALUES (116, '10', '1', 3);
+INSERT INTO `relations` VALUES (117, '10', '2', 3);
+INSERT INTO `relations` VALUES (118, '10', '3', 3);
+INSERT INTO `relations` VALUES (119, '10', '4', 3);
+INSERT INTO `relations` VALUES (120, '10', '5', 1);
 
---
--- Indexes for table `alternatives`
---
-ALTER TABLE `alternatives`
-  ADD PRIMARY KEY (`id_alternatif`);
+-- ----------------------------
+-- Table structure for results
+-- ----------------------------
+DROP TABLE IF EXISTS `results`;
+CREATE TABLE `results`  (
+  `id_result` int(10) NOT NULL AUTO_INCREMENT,
+  `alternatif` varchar(225) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+  `hasil` float NOT NULL,
+  PRIMARY KEY (`id_result`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 65 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
 
---
--- Indexes for table `criterias`
---
-ALTER TABLE `criterias`
-  ADD PRIMARY KEY (`id_kriteria`);
+-- ----------------------------
+-- Records of results
+-- ----------------------------
+INSERT INTO `results` VALUES (55, '4', 0.520384);
+INSERT INTO `results` VALUES (56, '5', 0.467545);
+INSERT INTO `results` VALUES (57, '6', 0.467545);
+INSERT INTO `results` VALUES (58, '7', 0.272589);
+INSERT INTO `results` VALUES (59, '8', 0.272589);
+INSERT INTO `results` VALUES (60, '9', 0.458697);
+INSERT INTO `results` VALUES (61, '10', 0.627739);
+INSERT INTO `results` VALUES (62, '11', 0.375228);
+INSERT INTO `results` VALUES (63, '12', 0.33541);
+INSERT INTO `results` VALUES (64, '13', 0.617689);
 
---
--- Indexes for table `migrations`
---
-ALTER TABLE `migrations`
-  ADD PRIMARY KEY (`id`);
+-- ----------------------------
+-- Table structure for users
+-- ----------------------------
+DROP TABLE IF EXISTS `users`;
+CREATE TABLE `users`  (
+  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `email` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `jabatan` enum('admin','kepala_bidang') CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `password` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `remember_token` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`) USING BTREE,
+  UNIQUE INDEX `users_email_unique`(`email`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Dynamic;
 
---
--- Indexes for table `password_resets`
---
-ALTER TABLE `password_resets`
-  ADD KEY `password_resets_email_index` (`email`),
-  ADD KEY `password_resets_token_index` (`token`);
+-- ----------------------------
+-- Records of users
+-- ----------------------------
+INSERT INTO `users` VALUES (3, 'bagus', 'bagussetyawan551@gmail.com', 'admin', '$2y$10$W7ViBUBAWZ1wTHr/0vIctuv5BpSYcpBIUsSeSad.lQhoMTdiT5iUW', 'MICpbKDrru3l6P7c09vjEEDr5elWAkWdNfe11wAwjfkdGLs9FWKIu5c348Xc', '2023-06-05 10:42:27', '2023-06-16 01:18:44');
+INSERT INTO `users` VALUES (4, 'user', 'user@gmail.com', 'admin', '$2y$10$dxkY41cJ8Xr6JzDY9TKEMO97.kerqctm91hru.Zv.IHO0zaDGYQIu', NULL, '2023-06-05 11:45:24', '2023-06-05 11:45:24');
+INSERT INTO `users` VALUES (5, 'arifin', 'arifin@gmail.com', 'kepala_bidang', '$2y$10$zcwvPb5oc06skyREnykC0O8QbEti5XxWcLuLj5i2.JkWQ3rrMRw9S', NULL, '2023-06-16 01:18:39', '2023-06-16 01:18:39');
 
---
--- Indexes for table `relations`
---
-ALTER TABLE `relations`
-  ADD PRIMARY KEY (`id_relasi`);
-
---
--- Indexes for table `results`
---
-ALTER TABLE `results`
-  ADD PRIMARY KEY (`id_result`);
-
---
--- Indexes for table `users`
---
-ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `users_email_unique` (`email`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `alternatives`
---
-ALTER TABLE `alternatives`
-  MODIFY `id_alternatif` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
-
---
--- AUTO_INCREMENT for table `criterias`
---
-ALTER TABLE `criterias`
-  MODIFY `id_kriteria` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
---
--- AUTO_INCREMENT for table `migrations`
---
-ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT for table `relations`
---
-ALTER TABLE `relations`
-  MODIFY `id_relasi` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
-
---
--- AUTO_INCREMENT for table `results`
---
-ALTER TABLE `results`
-  MODIFY `id_result` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
-
---
--- AUTO_INCREMENT for table `users`
---
-ALTER TABLE `users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-COMMIT;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+SET FOREIGN_KEY_CHECKS = 1;
