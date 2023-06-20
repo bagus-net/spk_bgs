@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Result extends Model
+class Hasil extends Model
 {
     protected $fillable = [
         'alternatif', 'hasil',

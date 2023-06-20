@@ -18,15 +18,15 @@ class Helper extends Model
 
 	public static function bobot($bobot){
 		if ($bobot == 1) {
-			echo "Tidak Penting";
+			echo "Tidak Penting = 1";
 		}else if($bobot == 2){
-			echo "Kurang Penting";
+			echo "Kurang Penting = 2";
 		}else if($bobot == 3){
-			echo "Cukup Penting";
+			echo "Cukup Penting = 3";
 		}else if($bobot == 4){
-			echo "Penting";
+			echo "Penting = 4";
 		}else if($bobot == 5){
-			echo "Sangat Penting";
+			echo "Sangat Penting = 5";
 		}
 	}
 

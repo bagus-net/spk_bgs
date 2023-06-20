@@ -19,6 +19,43 @@
                
             </div>
         </div>
+
+        <div class="">
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Nilai Kecocokan Terhadap Alternatif</div>
+        
+                        <div class="panel-body">
+                            <table id="example" class="table table-striped table-bordered">
+                                <thead>
+                                  <tr>
+                                    <th>No</th>
+                                    <th>Nama Alternatif</th>
+                                    @foreach ($kriteria as $dataK)
+                                        <th>{{$dataK->nama_kriteria}}</th>
+                                        @php
+                                            $id[] = $dataK->id_kriteria;
+                                        @endphp
+                                    @endforeach
+                                  </tr>
+                                </thead>
+                                    @foreach ($alternatif as $keyT => $dataT)
+                                    <tbody>
+                                        <td>{{$keyT+1}}</td>
+                                        <td>{{$dataT->nama_alternatif}}</td>
+                                        @foreach ($kriteria as $keyK => $dataK)
+                                            <td>
+                                                {{\App\Helper::nilai($dataT->id_alternatif,$id[$keyK])}}
+                                            </td>
+                                        @endforeach
+                                    </tbody>
+                                    @endforeach
+                              </table>
+                        </div>
+                    </div>
+                </div>
+
 <div class="">
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
