@@ -19,7 +19,7 @@
                
             </div>
         </div>
-<div class="">
+{{-- <div class="">
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
@@ -43,7 +43,7 @@
                                
                 </div>
             </div>
-        </div>
+        </div> --}}
 
 
         <div class="">
@@ -82,6 +82,34 @@
                     </div>
                 </div>
 
+                <div class="col-md-10 col-md-offset-1">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Bobot/Kepentingan</div>
+        
+                        <div class="panel-body">
+                            <table class="table table-hover">
+                                <thead>
+                                  <tr>
+                                    
+                                    <th>Kriteria</th>
+                                    <th>Bobot Kepentingan</th>
+                               
+                                  </tr>
+                                </thead>
+                                    @foreach ($kriteria as $keyK => $dataK)
+                                    <tbody>
+                                        <td>{{$keyK+1}}</td>
+                                        <td>{{$dataK->kode}}</td>
+                                    
+                                        <td>{{$bobot_kepentingan[$keyK]}}</td>
+                                    </tbody>
+                                    @endfor
+                              </table>
+                        </div>
+                    </div>
+                </div>
+                
+
         {{-- <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
                 <div class="panel-heading">Perhitungan Bobot Kepentingan</div>
@@ -106,8 +134,8 @@
                             @endforeach
                       </table>
                 </div>
-            </div> --}}
-        </div>
+            </div> 
+        </div>--}}
 
         {{-- <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
