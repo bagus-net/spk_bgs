@@ -34,7 +34,7 @@ class HasilWPController extends Controller
     $jmlh_kriteria = $kriteria->count();
     $jmlh_alternatif = $alternatif->count();
 
-    // dd($jmlh_bobot);
+    //   dd($bobot);
     // dd($jmlh_kriteria);
     //Tahap 1 = Mencari Perpangkatan dari masing-masing bobot
     // for ($i=0;$i<$jmlh_kriteria;$i++){
@@ -58,14 +58,14 @@ class HasilWPController extends Controller
 
         //Tahap 3 = Mencari Nilai pangkat
             
-        for ($i=0;$i<$jmlh_alternatif;$i++) {
-            for ($j=0;$j<$jmlh_kriteria;$j++) {
-                $bobot_k[$i] = $bobot[$j] / $jmlh_bobot[$i];
+        for ($i=0;$i<$jmlh_kriteria;$i++) {
+            for ($j=0;$j<$jmlh_alternatif;$j++) {
+                $normalisasi_terbobot[$i] = $bobot[$i] / $bobot[$i];
             }
         }
+    
+      dd($normalisasi_terbobot);
 
-
-         dd($bobot_k);
         //   dd($bobot_kepentingan);
 
         //Tahap 4 = Mencari Nilai S

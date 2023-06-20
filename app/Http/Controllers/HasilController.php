@@ -32,7 +32,13 @@ class HasilController extends Controller
     $jmlh_bobot = $kriteria->sum('bobot');
     $jmlh_kriteria = $kriteria->count();
     $jmlh_alternatif = $alternatif->count();
-    // dd($jmlh_bobot);
+    //  dd($bobot);
+//     for ($i=0;$i<$jmlh_kriteria;$i++) {
+//         for ($j=0;$j<$jmlh_alternatif;$j++) {
+//             $bobot_kep[$j][$i] = $bobot[$i] * $jmlh_bobot[$i][$i];
+//         }
+//     }
+//   dd($bobot_kep);
     //Tahap 1 = Mencari Perpangkatan dari masing-masing bobot
     for ($i=0;$i<$jmlh_kriteria;$i++) {
         for ($j=0;$j<$jmlh_alternatif;$j++) {
@@ -62,11 +68,11 @@ class HasilController extends Controller
     //Tahap 4 = Normalisasi Terbobot
     for ($i=0;$i<$jmlh_kriteria;$i++) {
         for ($j=0;$j<$jmlh_alternatif;$j++) {
-            $normalisasi_terbobot[$j][$i] = $bobot[$i] * $normalisasi[$j][$i];
+            $normalisasi_terbobot[$i] = $bobot[$i] * $bobot[$i];
         }
     }
 
-
+  dd($normalisasi_terbobot);
 
 
         //Tahap 5 = Matriks Solusi Ideal (Positif dan Negatif)
