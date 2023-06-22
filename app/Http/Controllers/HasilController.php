@@ -92,7 +92,7 @@ class HasilController extends Controller
             $hasil_negatif[$i] = sqrt($total_negatif[$i]);
         }
 
-         dd($total_positif);
+        //  dd($total_positif);
 
         //Tahap 7 = Mencari Preferensi
         for ($i=0;$i<$jmlh_alternatif;$i++){
