@@ -64,17 +64,32 @@ class HasilWPController extends Controller
             }
         }
     
-      dd($bobot_k);
+      
 
         //   dd($bobot_kepentingan);
-
+        $pangkat_nilai =array();
+        for ($i=0;$i<$jmlh_kriteria;$i++){
+            
+            for ($j=0;$j<$jmlh_alternatif;$j++){
+                 $pangkat_nilai = 1;
+                $nilai[$j][$i] = \App\Helper::nilai($id_alternatif[$j],$id_kriteria[$i]);
+                (int) $pangkat_nilai [$i]*= pow($bobot_k[$i],$nilai[$j][$i] );
+                
+            }
+        }
         //Tahap 4 = Mencari Nilai S
 
 
-        // dd($normalisasi_terbobot);
+        dd($pangkat_nilai);
 
+        //  $s = array();
+        //  for ($i=0;$i<$jmlh_alternatif;$i++){
+        //      $s[$i] = 0;
+        //      for ($j=0;$j<$jmlh_kriteria;$j++){
+        //          $s[$i] *= pow($nilai[$j][$i],$bobot_k[$i]);
+        //      }}
         //Tahap 5 = Matriks Solusi Ideal (Positif dan Negatif)
-
+        // dd($s);
         // dd($negatif);
 
         //Tahap 6 = Jarak Solusi (Positif dan Negatif)
@@ -96,6 +111,6 @@ class HasilWPController extends Controller
         //proses perangkingan nilai
         // 	$rangking = Result::orderBy('hasil','desc')->get();
 
-        return view('hasilwp', compact('kriteria', 'alternatif', 'relasi', 'jmlh_kriteria', 'jmlh_alternatif','bobot_k'));
+        return view('hasilwp', compact('kriteria', 'alternatif', 'relasi', 'jmlh_kriteria', 'jmlh_alternatif','bobot_k','pangkat_nilai'));
     }
 }

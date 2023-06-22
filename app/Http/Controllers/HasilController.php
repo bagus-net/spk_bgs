@@ -40,7 +40,8 @@ class HasilController extends Controller
                 $pangkat_kriteria[$j][$i] = pow($nilai[$j][$i], 2);
             }
         }
-        // dd($pangkat_kriteria);
+        
+        dd($pangkat_kriteria);
 
         //Tahap 2 = Mencari Total Perpangkatan Sebelumnya per-kriteria
         $jmlh_pangkat = array();
@@ -49,7 +50,7 @@ class HasilController extends Controller
             for ($j=0;$j<$jmlh_alternatif;$j++){
                 $jmlh_pangkat[$i] += $pangkat_kriteria[$j][$i];
             }
-        }
+        }   
 
         //Tahap 3 = Normalisasi
         for ($i=0;$i<$jmlh_kriteria;$i++){
@@ -91,7 +92,7 @@ class HasilController extends Controller
             $hasil_negatif[$i] = sqrt($total_negatif[$i]);
         }
 
-        // dd($hasil_positif);
+         dd($total_positif);
 
         //Tahap 7 = Mencari Preferensi
         for ($i=0;$i<$jmlh_alternatif;$i++){
