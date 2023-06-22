@@ -60,11 +60,11 @@ class HasilWPController extends Controller
             
         for ($i=0;$i<$jmlh_kriteria;$i++) {
             for ($j=0;$j<$jmlh_alternatif;$j++) {
-                $normalisasi_terbobot[$i] = $bobot[$i] / $bobot[$i];
+                $bobot_k[$i] = $bobot [$i] / $jmlh_bobot;
             }
         }
     
-      dd($normalisasi_terbobot);
+      dd($bobot_k);
 
         //   dd($bobot_kepentingan);
 
