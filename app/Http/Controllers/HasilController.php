@@ -41,7 +41,7 @@ class HasilController extends Controller
             }
         }
         
-        dd($pangkat_kriteria);
+        // dd($pangkat_kriteria);
 
         //Tahap 2 = Mencari Total Perpangkatan Sebelumnya per-kriteria
         $jmlh_pangkat = array();
@@ -92,7 +92,7 @@ class HasilController extends Controller
             $hasil_negatif[$i] = sqrt($total_negatif[$i]);
         }
 
-        //  dd($total_positif);
+        //   dd($normalisasi_terbobot);
 
         //Tahap 7 = Mencari Preferensi
         for ($i=0;$i<$jmlh_alternatif;$i++){
@@ -103,7 +103,7 @@ class HasilController extends Controller
              $data['hasil'] = $preferensi[$i];
              $data->save();
         }
-        // dd($preferensi);
+        //  dd($preferensi);
 
     	//proses perangkingan nilai
     	$rangking = Result::orderBy('hasil','desc')->get();

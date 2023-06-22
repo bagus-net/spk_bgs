@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Helper;
 use Illuminate\Http\Request;
 use App\Criteria;
 use App\Alternative;
@@ -66,51 +67,38 @@ class HasilWPController extends Controller
     
       
 
-        //   dd($bobot_kepentingan);
-        $pangkat_nilai =array();
-        for ($i=0;$i<$jmlh_kriteria;$i++){
+        //   dd($bobot_kepentingan);         
+
+//Tahap 4 = Mencari Nilai S
+        $S = array();
+        
+        for ($i=0;$i<$jmlh_alternatif;$i++){
+            $s[$i] = 1;
             
-            for ($j=0;$j<$jmlh_alternatif;$j++){
-                 $pangkat_nilai = 1;
-                $nilai[$j][$i] = \App\Helper::nilai($id_alternatif[$j],$id_kriteria[$i]);
-                (int) $pangkat_nilai [$i]*= pow($bobot_k[$i],$nilai[$j][$i] );
-                
-            }
+for ($j=0;$j<$jmlh_kriteria;$j++) {
+    $nilai[$i][$j] = Helper::nilai($id_alternatif[$i], $id_kriteria[$j]);
+    $s[$i] *= pow($nilai[$i][$j] , $bobot_k[$j]);
+
+    $total_s=array_sum($s);
+}  
         }
-        //Tahap 4 = Mencari Nilai S
-
-
-        dd($pangkat_nilai);
-
-        //  $s = array();
-        //  for ($i=0;$i<$jmlh_alternatif;$i++){
-        //      $s[$i] = 0;
-        //      for ($j=0;$j<$jmlh_kriteria;$j++){
-        //          $s[$i] *= pow($nilai[$j][$i],$bobot_k[$i]);
-        //      }}
-        //Tahap 5 = Matriks Solusi Ideal (Positif dan Negatif)
-        // dd($s);
-        // dd($negatif);
-
-        //Tahap 6 = Jarak Solusi (Positif dan Negatif)
-
-
-        // dd($hasil_positif);
-
-        //Tahap 7 = Mencari Preferensi
-        // for ($i=0;$i<$jmlh_alternatif;$i++){
-        //     $preferensi[$i] = $hasil_negatif[$i] / ($hasil_positif[$i]+$hasil_negatif[$i]);
-        //      //menyimpan data
-        //      $data = Result::firstOrNew(array('alternatif' => $id_alternatif[$i]));
-        //      $data['alternatif'] = $id_alternatif[$i];
-        //      $data['hasil'] = $preferensi[$i];
-        //      $data->save();
-        // }
+        // dd($total_s);
+       
+for ($i=0;$i<$jmlh_alternatif;$i++) {
+    $v[$i] = $s[$i] / $total_s;
+ //menyimpan data
+             $data = Hasil::firstOrNew(array('alternatif' => $id_alternatif[$i]));
+             $data['alternatif'] = $id_alternatif[$i];
+             $data['hasil'] = $v[$i];
+             $data->save();
+        }
         // dd($preferensi);
+        
+        
 
         //proses perangkingan nilai
-        // 	$rangking = Result::orderBy('hasil','desc')->get();
+        	$rangkingwp = Hasil::orderBy('hasil','desc')->get();
 
-        return view('hasilwp', compact('kriteria', 'alternatif', 'relasi', 'jmlh_kriteria', 'jmlh_alternatif','bobot_k','pangkat_nilai'));
+        return view('hasilwp', compact('kriteria', 'alternatif', 'relasi', 'jmlh_kriteria', 'jmlh_alternatif','bobot_k','s','total_s','v','rangkingwp'));
     }
 }
