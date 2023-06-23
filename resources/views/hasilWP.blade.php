@@ -138,7 +138,7 @@
                                 <thead>
                                   <tr>
                                     
-                                    <th>Total S</th> <td>{{$s[$keyA]}}</td>
+                                    <th>Total S</th> <td>{{$total_s}}</td>
  
                                   </tr>
                                 </thead>

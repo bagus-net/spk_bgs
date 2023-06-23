@@ -61,7 +61,7 @@ for ($j=0;$j<$jmlh_kriteria;$j++) {
     $total_s=array_sum($s);
 }  
         }
-        // dd($total_s);
+        //  dd($total_s);
        
 for ($i=0;$i<$jmlh_alternatif;$i++) {
     $v[$i] = $s[$i] / $total_s;
