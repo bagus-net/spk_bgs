@@ -35,27 +35,6 @@ class HasilWPController extends Controller
     $jmlh_kriteria = $kriteria->count();
     $jmlh_alternatif = $alternatif->count();
 
-    //   dd($bobot);
-    // dd($jmlh_kriteria);
-    //Tahap 1 = Mencari Perpangkatan dari masing-masing bobot
-    // for ($i=0;$i<$jmlh_kriteria;$i++){
-        //     for ($j=0;$j<$jmlh_alternatif;$j++){
-        //         $nilai[$j][$i] = \App\Helper::nilai($id_alternatif[$j],$id_kriteria[$i]);
-        //         $pangkat_kriteria[$j][$i] = pow($nilai[$j][$i], 2);
-        //     }
-    // }
-    // dd($pangkat_kriteria);
-
-    //Tahap 2 = Mencari Total Perpangkatan Sebelumnya per-kriteria
-    // $jmlh_pangkat = array();
-    // for ($i=0;$i<$jmlh_kriteria;$i++){
-        //     $jmlh_pangkat[$i] = 0;
-        //     for ($j=0;$j<$jmlh_alternatif;$j++){
-        //         $jmlh_pangkat[$i] += $pangkat_kriteria[$j][$i];
-        //     }
-    // }
-  
-
 
         //Tahap 3 = Mencari Nilai pangkat
             
