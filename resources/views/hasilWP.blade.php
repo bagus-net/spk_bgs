@@ -208,6 +208,12 @@
                                 </tbody>
                               </table>
                             </div>
+
+                            <div class="d-print-none mt-4">
+                                <div class="float-end">
+                                    <a href="javascript:window.print()" class="btn btn-success waves-effect waves-light me-1"><i class="fa fa-print"></i></a>
+                                    {{-- <a href="#" class="btn btn-primary w-md waves-effect waves-light">Send</a> --}}
+                                </div>
                         </div>
                     </div>
                 </div> <!-- end col -->

@@ -3,6 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Criteria;
+use App\Alternative;
+use App\Relation;
+use App\Result;
+use App\Hasil;
+use App\User;
+
 
 class HomeController extends Controller
 {
@@ -23,6 +30,20 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $hasilwp = Hasil::all();
+        $hasiltopsis = Result::all();
+        $alternatif = Alternative::all();
+        $relasi = Relation::all();
+        $kriteria = Criteria::all();
+        $relasi = Relation::all();
+        $user = User::all();
+
+    $jmlh_bobot = $kriteria->sum('bobot');
+    $jmlh_kriteria = $kriteria->count();
+    $jmlh_alternatif = $alternatif->count();
+    $jmlh_user= $user->count();
+
+
+        return view('home', compact('kriteria', 'alternatif', 'relasi', 'jmlh_kriteria', 'jmlh_alternatif','jmlh_user'));
     }
 }

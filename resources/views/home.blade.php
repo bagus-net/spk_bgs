@@ -27,7 +27,7 @@
                     <div id="total-revenue-chart" data-colors='["--bs-primary"]'></div>
                 </div>
                 <div>
-                    <h4 class="mb-1 mt-1"><span data-plugin="counterup">10</span></h4>
+                    <h4 class="mb-1 mt-1"><span data-plugin="counterup">{{ $jmlh_alternatif }}</span></h4>
                     <p class="text-muted mb-0">Total Alternatif</p>
                 </div>
                 {{-- <p class="text-muted mt-3 mb-0"><span class="text-success me-1"><i class="mdi mdi-arrow-up-bold me-1"></i>2.65%</span> since last week
@@ -43,7 +43,7 @@
                     <div id="orders-chart" data-colors='["--bs-success"]'> </div>
                 </div>
                 <div>
-                    <h4 class="mb-1 mt-1"><span data-plugin="counterup">5</span></h4>
+                    <h4 class="mb-1 mt-1"><span data-plugin="counterup">{{ $jmlh_kriteria }}</span></h4>
                     <p class="text-muted mb-0">Total Kriteria</p>
                 </div>
                 {{-- <p class="text-muted mt-3 mb-0"><span class="text-danger me-1"><i class="mdi mdi-arrow-down-bold me-1"></i>0.82%</span> since last week
@@ -56,35 +56,19 @@
         <div class="card">
             <div class="card-body">
                 <div class="float-end mt-2">
-                    <div id="customers-chart" data-colors='["--bs-primary"]'> </div>
+                    <div id="orders-chart" data-colors='["--bs-success"]'> </div>
                 </div>
                 <div>
-                    <h4 class="mb-1 mt-1"><span data-plugin="counterup">0</span></h4>
-                    <p class="text-muted mb-0">Hasil WP</p>
+                    <h4 class="mb-1 mt-1"><span data-plugin="counterup">{{ $jmlh_user }}</span></h4>
+                    <p class="text-muted mb-0">Total User</p>
                 </div>
-                {{-- <p class="text-muted mt-3 mb-0"><span class="text-danger me-1"><i class="mdi mdi-arrow-down-bold me-1"></i>6.24%</span> since last week
+                {{-- <p class="text-muted mt-3 mb-0"><span class="text-danger me-1"><i class="mdi mdi-arrow-down-bold me-1"></i>0.82%</span> since last week
                 </p> --}}
             </div>
         </div>
     </div> <!-- end col-->
 
-    <div class="col-md-6 col-xl-3">
-
-        <div class="card">
-            <div class="card-body">
-                <div class="float-end mt-2">
-                    <div id="growth-chart" data-colors='["--bs-warning"]'></div>
-                </div>
-                <div>
-                    <h4 class="mb-1 mt-1"> <span data-plugin="counterup">0</span></h4>
-                    <p class="text-muted mb-0">Hasil Topsis</p>
-                </div>
-                {{-- <p class="text-muted mt-3 mb-0"><span class="text-success me-1"><i class="mdi mdi-arrow-up-bold me-1"></i>10.51%</span> since last week
-                </p> --}}
-            </div>
-        </div>
-    </div> <!-- end col-->
-</div> <!-- end row-->
+    
 
 
 <div class="col-lg-7">
@@ -94,8 +78,9 @@
             <p class="card-text text-white-50">1. Menu Users : menu untuk mengelola user yang menggunakan aplikasi.</p>
             <p class="card-text text-white-50">2. Menu Alternatif : menu untuk menentukan alternatif (spesifikasi komputer) alternatif adalah pilihan atau objek yang disarankan.</p>
             <p class="card-text text-white-50">3. Menu Kriteria : menu untuk mengelola kriteria yang digunakan untuk menilai.</p>
-            <p class="card-text text-white-50">4. Menu Hasil WP : menu yang digunakan untuk melihat hasil perhitungan dari metode weighted product.</p>
-            <p class="card-text text-white-50">5. Menu Hasil TOPSIS : menu yang digunakan untuk melihat hasil perhitungan dari metode TOPSIS.</p>
+            <p class="card-text text-white-50">4. Menu Perhitungan WP : menu yang digunakan untuk melihat hasil perhitungan dari metode weighted product.</p>
+            <p class="card-text text-white-50">5. Menu Perhitungan TOPSIS : menu yang digunakan untuk melihat hasil perhitungan dari metode TOPSIS.</p>
+            <p class="card-text text-white-50">6. Menu Hasil : menu yang menampilkan rekomendasi alternatif dari dua metode </p>
 
 
 

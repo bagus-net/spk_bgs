@@ -1,4 +1,6 @@
 <?php
+
+use App\Http\Controllers\HasilMetodeController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -50,3 +52,4 @@ Route::group(['prefix' => 'user'], function () {
 
 Route::get('hasil', 'HasilController@index');
 Route::get('hasilwp', 'HasilWPController@index');
+Route::get('hasildua', 'HasilMetodeController@index');
