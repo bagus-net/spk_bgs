@@ -24,20 +24,10 @@ class AlternatifController extends Controller
     {
     	$input = $request->all();
     	$insert = Alternative::create([
-    	    'nama_alternatif' => $input['nama_alternatif'],
-            // 'alamat' => $input['alamat'],
-            // 'no_hp' => $input['no_hp'],
-    	    
-    	]);
-    	// if ($insert) {
-    	//     return redirect('tanaman');  
-    	// } else {
-    	           
-    	// } 
+    	    'nama_alternatif' => $input['nama_alternatif'],    
+    	]);	
     	return redirect()->back();
-    	// return redirect()->back()->withErrors(array('war' => 'success'));
     }
-
     public function edit($id)
     {
     	$data = Alternative::find($id);
@@ -90,10 +80,7 @@ class AlternatifController extends Controller
             $kriteria[] = $value->kriteria;
         }
         $jumlah = $data->count();
-        // for ($i=0;$i<$jumlah;$i++){
-        //     echo \App\Helper::kriteria($kriteria[$i])." ".$nilai[$i];
-        //     echo "<br>";
-        // }
+        
         $nama_alternatif = \App\Helper::alternatif($id);
         $alamat = \App\Helper::alamat($id);
         $no_hp = \App\Helper::no_hp($id);

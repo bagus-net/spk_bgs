@@ -30,7 +30,7 @@
                             <input type="text" class="form-control" name="name" value="{{$data->name}}" placeholder="Input field">
                         </div>
                         <div class="form-group">
-                            <label for="">Username</label>
+                            <label for="">Email</label>
                             <input type="text" class="form-control" name="email" value="{{$data->email}}" placeholder="Input field">
                         </div>
 
@@ -42,6 +42,8 @@
                                 <option value="kepala_bidang">Kepala Bidang</option>
                             </select>
                         </div>
+
+                        
                     
                         <button type="submit" class="btn btn-primary">Submit</button>
                         <a href="{{ url('user') }}" class="btn btn-danger">Back</a>

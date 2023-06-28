@@ -81,7 +81,7 @@
                                     </div>
 
 
-                                    <div class="mt-4 text-center">
+                                    {{-- <div class="mt-4 text-center">
                                         <div class="signin-other-title">
                                             <h5 class="font-size-14 mb-3 title">Sign in with</h5>
                                         </div>
@@ -107,7 +107,7 @@
                                                 </a>
                                             </li>
                                         </ul>
-                                    </div>
+                                    </div> --}}
 
 
                     </form>

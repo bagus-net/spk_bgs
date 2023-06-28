@@ -43,7 +43,7 @@
                                             <input type="text" class="form-control" name="name" id="">
                                         </div>
                                         <div class="form-group">
-                                            <label for="">Username</label>
+                                            <label for="">Email</label>
                                             <input type="text" class="form-control" name="email" id="" >
                                         </div>
 
@@ -81,7 +81,7 @@
                           <tr>
                             <th>No</th>
                             <th>Nama Lengkap</th>
-                            <th>Username</th>
+                            <th>Email</th>
                             <th>Jabatan</th>
                             <th>Aksi</th>
                           </tr>
