@@ -118,7 +118,7 @@
                     <li><a href={{ url('/kriteria')  }}>@lang('Data Kriteria')</a></li>
                     <li><a href={{ url('/hasilwp')  }}>@lang('Perhitungan WP')</a></li>
                     <li><a href={{ url('/hasil')  }}>@lang('Perhitungan Topsis')</a></li>
-                    <li><a href={{ url('/hasildua')  }}>@lang('Hasil')</a></li>
+                    <li><a href={{ url('/hasildua')  }}>@lang('Hasil Rekomendasi')</a></li>
                     {{-- <li><a href={{ url('/kriteria')  }}>@lang('Kriteria')</a></li> --}}
                     {{-- <li><a href={{ route('bobot.list') }}>@lang('Bobot')</a></li> --}}
                     {{-- <li><a href={{ route('users.list') }}>@lang('Users')</a></li>                     --}}

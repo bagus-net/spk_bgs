@@ -75,12 +75,12 @@
     <div class="card bg-info border-info text-white-50">
         <div class="card-body">
             <h5 class="mb-4 text-white"><i class="uil uil-question-circle me-3"></i>Panduan:</h5>
-            <p class="card-text text-white-50">1. Menu Users : menu untuk mengelola user yang menggunakan aplikasi.</p>
-            <p class="card-text text-white-50">2. Menu Alternatif : menu untuk menentukan alternatif (spesifikasi komputer) alternatif adalah pilihan atau objek yang disarankan.</p>
-            <p class="card-text text-white-50">3. Menu Kriteria : menu untuk mengelola kriteria yang digunakan untuk menilai.</p>
-            <p class="card-text text-white-50">4. Menu Perhitungan WP : menu yang digunakan untuk melihat hasil perhitungan dari metode weighted product.</p>
-            <p class="card-text text-white-50">5. Menu Perhitungan TOPSIS : menu yang digunakan untuk melihat hasil perhitungan dari metode TOPSIS.</p>
-            <p class="card-text text-white-50">6. Menu Hasil : menu yang menampilkan rekomendasi alternatif dari dua metode </p>
+            <p class="card-text text-white">1. Menu Users : menu untuk mengelola user yang menggunakan aplikasi.</p>
+            <p class="card-text text-white">2. Menu Alternatif : menu untuk menentukan alternatif (spesifikasi komputer) alternatif adalah pilihan atau objek yang disarankan.</p>
+            <p class="card-text text-white">3. Menu Kriteria : menu untuk mengelola kriteria yang digunakan untuk menilai.</p>
+            <p class="card-text text-white">4. Menu Perhitungan WP : menu yang digunakan untuk melihat hasil perhitungan dari metode weighted product.</p>
+            <p class="card-text text-white">5. Menu Perhitungan TOPSIS : menu yang digunakan untuk melihat hasil perhitungan dari metode TOPSIS.</p>
+            <p class="card-text text-white">6. Menu Hasil Rekomendasi : menu yang menampilkan rekomendasi alternatif dari dua metode </p>
 
 
 
