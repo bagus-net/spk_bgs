@@ -42,8 +42,10 @@ class HomeController extends Controller
     $jmlh_kriteria = $kriteria->count();
     $jmlh_alternatif = $alternatif->count();
     $jmlh_user= $user->count();
+    $rankingwp = Hasil::orderBy('hasil','desc')->take(2)->get();
+        $ranking = Result::orderBy('hasil','desc')->take(2)->get();
 
-
-        return view('home', compact('kriteria', 'alternatif', 'relasi', 'jmlh_kriteria', 'jmlh_alternatif','jmlh_user'));
+// dd ($ranking);
+        return view('home', compact('hasiltopsis','hasilwp','kriteria', 'alternatif', 'relasi', 'jmlh_kriteria', 'jmlh_alternatif','jmlh_user','rankingwp','ranking'));
     }
 }

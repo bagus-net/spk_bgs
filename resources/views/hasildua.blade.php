@@ -11,7 +11,7 @@
 @section('content')
 
 
-<h4 class="mb-0">Hasil Dua Metode</h4>
+<h4 class="mb-0">Hasil Rekomendasi Komputer</h4>
 <div class="row">
     <div class="col-12">
         <div class="card">

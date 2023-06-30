@@ -68,10 +68,79 @@
         </div>
     </div> <!-- end col-->
 
+    <div class="col-md-10 col-xl-5">
+        <div class="card">
+            <div class="card-body">
+                <div class="float-end mt-2">
+            <div class="panel-heading"><h5>Rekomendasi Metode Weighted Product</h5></div>
+
+            <table  class="table table-striped table-bordered dt-responsive nowrap"
+            style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+            <thead>
+                      <tr>
+                        <th>No</th>
+                        <th>Nama Alternatif</th>
+                        <th>Rangking</th>
+                    </tr>
+                </thead>
+                <tbody>
+                        @foreach ($rankingwp as $key => $data)
+                        <tr>
+                            <td>{{$key+1}}</td>
+                            <td>{{\App\Helper::alternatif($data->alternatif)}}</td>
+
+                            <td>{{$key+1}}</td>
+                            
+                        </form>
+                    </td>
+                </tr>  
+                        @endforeach
+                    </tbody>
+                  </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <div class="col-md-10 col-xl-5">
+            <div class="card">
+                <div class="card-body">
+                    <div class="float-end mt-2">
+            <div class="panel-heading"><h5>Rekomendasi Metode Topsis</h5></div>
+
+            <table  class="table table-striped table-bordered dt-responsive nowrap"
+            style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+            <thead>
+                      <tr>
+                        <th>No</th>
+                        <th>Nama Alternatif</th>
+                        <th>Rangking</th>
+                    </tr>
+                </thead>
+                <tbody>
+                        @foreach ($ranking as $key => $data)
+                        <tr>
+                            <td>{{$key+1}}</td>
+                            <td>{{\App\Helper::alternatif($data->alternatif)}}</td>
+
+                            <td>{{$key+1}}</td>
+                            
+                        </form>
+                    </td>
+                </tr>  
+                       @endforeach
+                    </tbody>
+
+                  </table>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+
     
 
-
-<div class="col-lg-7">
+<div class="col-lg-10">
     <div class="card bg-info border-info text-white-50">
         <div class="card-body">
             <h5 class="mb-4 text-white"><i class="uil uil-question-circle me-3"></i>Panduan:</h5>
