@@ -93,7 +93,7 @@
                                 <td>{{$value->email}}</td>
                                 <td>{{$value->jabatan}}</td>
                                 <td>
-                                    <a href="{{ url('user/edit/'.$value->id) }}" class="btn btn-xs btn-info"><i class="uil-pen"></i></a>
+                                    {{-- <a href="{{ url('user/edit/'.$value->id) }}" class="btn btn-xs btn-info"><i class="uil-pen"></i></a> --}}
                                     <a href="{{ url('user/hapus/'.$value->id) }}" class="btn btn-xs btn-danger"><i class="fa fa-trash"></i></a>
                                 </td>
                             </tbody>
