@@ -68,7 +68,7 @@
         </div>
     </div> <!-- end col-->
 
-    <div class="col-md-10 col-xl-5">
+    <div class="col-md-10 col-xl-4">
         <div class="card">
             <div class="card-body">
                 <div class="float-end mt-2">
@@ -80,7 +80,7 @@
                       <tr>
                         <th>No</th>
                         <th>Nama Alternatif</th>
-                        <th>Rangking</th>
+                        <th>Ranking</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -102,7 +102,7 @@
         </div>
     </div>
 
-        <div class="col-md-10 col-xl-5">
+        <div class="col-md-10 col-xl-4">
             <div class="card">
                 <div class="card-body">
                     <div class="float-end mt-2">
@@ -114,7 +114,7 @@
                       <tr>
                         <th>No</th>
                         <th>Nama Alternatif</th>
-                        <th>Rangking</th>
+                        <th>Ranking</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -122,7 +122,6 @@
                         <tr>
                             <td>{{$key+1}}</td>
                             <td>{{\App\Helper::alternatif($data->alternatif)}}</td>
-
                             <td>{{$key+1}}</td>
                             
                         </form>
