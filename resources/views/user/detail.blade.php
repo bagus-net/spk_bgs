@@ -10,7 +10,7 @@
 @section('content')
 
 
-<h4 class="mb-0">Form Edit User</h4>
+<h4 class="mb-0">Detail User</h4>
 <div class="row">
     <div class="col-12">
         <div class="card">
@@ -20,37 +20,39 @@
         </div>
 
 
-                <div class="panel-body">
-                    <form action="{{ url('user/update') }}" method="POST" role="form">
-                        {{ csrf_field() }}
-
-                        <input type="hidden" name="id" value="{{$data->id}}">
+                {{-- <div class="panel-body">
+                    <form action="{{ url('user/detail') }}" method="POST" role="form">
+                        {{ csrf_field() }} --}}
+                        <div class="panel-body">
+                            <div class="form-group">
+                        <input type="hidden" name="id" value="{{$data->id}}" readonly>
                         <div class="form-group">
                             <label for="">Nama Lengkap</label>
-                            <input type="text" class="form-control" name="name" value="{{$data->name}}" placeholder="Input field">
+                            <input type="text" class="form-control" name="name" value="{{$data->name}}"  readonly>
                         </div>
                         <div class="form-group">
                             <label for="">Email</label>
-                            <input type="text" class="form-control" name="email" value="{{$data->email}}" placeholder="Input field">
+                            <input type="text" class="form-control" name="email" value="{{$data->email}}"  readonly>
                         </div>
 
                         <div class="form-group">
                             <label for="">Jabatan</label>
                             <select class="form-control" name="jabatan">
-                                <option value="{{$data->jabatan}}">{{\App\Helper::jabatan($data->jabatan)}}</option>
+                                <option value="{{$data->jabatan}}">{{\App\Helper::jabatan($data->jabatan)}}</option> 
                                 <option value="admin">Admin</option>
                                 <option value="kepala_bidang">Kepala Bidang</option>
                             </select>
                         </div>
 
-                        <label for="example-text-input" class="col-md-2 col-form-label">Password : </label>
-                        <div class="col-md-10">
-                            <input type="password" name="password" class="form-control" value="" id="password" placeholder="Enter password" required>
+
+                        <div class="form-group">
+                        <label for="">Password</label>
+                            <input type="password" name="password" class="form-control" value="" id="password"readonly>
                         </div>
 
                         
                     
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        {{-- <button type="submit" class="btn btn-primary">Submit</button> --}}
                         <a href="{{ url('user') }}" class="btn btn-danger">Back</a>
                     </form>
                 </div>

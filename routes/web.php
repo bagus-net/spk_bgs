@@ -46,6 +46,7 @@ Route::group(['prefix' => 'user'], function () {
 	Route::get('/', 'UserController@index');
 	Route::post('/tambah', 'UserController@insert');
 	Route::get('/edit/{id}', 'UserController@edit');
+	Route::get('/detail/{id}', 'UserController@show');
 	Route::post('/update', 'UserController@update');
 	Route::get('/hapus/{id}', 'UserController@delete');
 });

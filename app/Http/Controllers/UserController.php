@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -49,6 +50,7 @@ class UserController extends Controller
     	$data->name = $request->name;
     	$data->email = $request->email;
     	$data->jabatan = $request->jabatan;
+		$data->password = Hash::make($request->password);
 	
 
     	$data->update();
@@ -61,4 +63,14 @@ class UserController extends Controller
     	User::destroy($id);
     	return redirect()->back();
     }
+
+
+	public function show($id)
+    {
+    	$data = User::find($id);
+    	return view('user.detail', compact('data'));
+    }
+
+
+
 }

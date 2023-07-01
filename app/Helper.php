@@ -4,6 +4,7 @@ namespace App;
 use App\Alternative;
 use App\Criteria;
 use App\Relation;
+use App\User;
 
 use Illuminate\Database\Eloquent\Model;
 class Helper extends Model
@@ -30,6 +31,14 @@ class Helper extends Model
 		}
 	}
 
+	public static function jabatan($jabatan){
+		if ($jabatan == 'admin') {
+			echo "Admin";
+		}else if($jabatan == 'kepala_bidang'){
+			echo "Kepala Bidang";
+		}
+	}
+
 	public static function nilai($alternatif,$kriteria)
 	{
 		$data = Relation::where('alternatif',$alternatif)->where('kriteria',$kriteria)->orderBy('nilai','ASC')->get();
@@ -50,11 +59,11 @@ class Helper extends Model
 		return $data->atribut;
 	}
 
-	public static function jabatan($id)
-	{
-		$data = User::find($id);
-		return $data->jabatan;
-	}
+	// public static function jabatan($id)
+	// {
+	// 	$data = User::find($id);
+	// 	return $data->jabatan;
+	// }
 
 	public static function kode($id)
 	{
@@ -79,4 +88,23 @@ class Helper extends Model
 		$data = Alternative::find($id);
 		return $data->no_hp;
 	}
+
+	public static function name($id)
+	{
+		$data = User::find($id);
+		return $data->name;
+	}
+	public static function email($id)
+	{
+		$data = User::find($id);
+		return $data->email;
+	}
+	public static function password($id)
+	{
+		$data = User::find($id);
+		return $data->password;
+	}
+
+	
+
  }
