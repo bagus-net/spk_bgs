@@ -139,7 +139,7 @@
 
     
 
-<div class="col-lg-10">
+<div class="col-lg-8">
     <div class="card bg-info border-info text-white-50">
         <div class="card-body">
             <h5 class="mb-4 text-white"><i class="uil uil-question-circle me-3"></i>Panduan:</h5>
