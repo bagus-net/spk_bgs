@@ -50,7 +50,7 @@
 
                         
                     
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="submit" class="btn btn-success">Submit</button>
                         <a href="{{ url('user') }}" class="btn btn-danger">Back</a>
                     </form>
                 </div>

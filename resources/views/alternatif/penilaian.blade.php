@@ -37,7 +37,7 @@
                             </div>
                         @endforeach
                     
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="submit" class="btn btn-success">Submit</button>
                         <a href="{{ url('alternatif') }}" class="btn btn-danger">Back</a>
                     </form>
                 </div>

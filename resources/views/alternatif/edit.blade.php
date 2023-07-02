@@ -33,7 +33,7 @@
                         </div>
                         
                     </div>
-                        <button type="submit" class="btn btn-primary">Simpan</button>
+                        <button type="submit" class="btn btn-success">Simpan</button>
                         <a href="{{ url('alternatif') }}" class="btn btn-danger">Kembali</a>
                     </form>
                 </div>

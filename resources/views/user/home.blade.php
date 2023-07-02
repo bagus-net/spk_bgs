@@ -24,7 +24,7 @@
         <div class="button-items">
 
             <!-- Extra Large modal -->
-     <button type="button" class="btn btn-primary waves-effect waves-light" data-bs-toggle="modal" data-bs-target=".bs-example-modal-xl">Tambah User</button>
+     <button type="button" class="btn btn-success waves-effect waves-light" data-bs-toggle="modal" data-bs-target=".bs-example-modal-xl">Tambah User</button>
      <div class="modal fade bs-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
          <div class="modal-dialog modal-xl">
              <div class="modal-content">
@@ -67,7 +67,7 @@
                                         </div>
                                         
                                     
-                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                        <button type="submit" class="btn btn-success">Submit</button>
                                     </form>
                                 </div>
                                 <div class="modal-footer">

@@ -55,7 +55,7 @@
                             </select>
                         </div>
                     
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="submit" class="btn btn-success">Submit</button>
                         <a href="{{ url('kriteria') }}" class="btn btn-danger">Back</a>
                     </form>
                 </div>
