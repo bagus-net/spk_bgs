@@ -57,7 +57,7 @@ class HasilWPController extends Controller
 for ($j=0;$j<$jmlh_kriteria;$j++) {
     $nilai[$i][$j] = Helper::nilai($id_alternatif[$i], $id_kriteria[$j]);
     $s[$i] *= pow($nilai[$i][$j] , $bobot_k[$j]);
-
+    //menghitung total jumlah s
     $total_s=array_sum($s);
 }  
         }
