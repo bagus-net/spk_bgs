@@ -20,7 +20,7 @@
         </div>
                 <div class="panel-body">
                     <div class="form-group">
-                        <label for="">Nama Jalan</label>
+                        <label for="">Nama Alternatif</label>
                         <input type="text" class="form-control" name="nama_alternatif" value="{{$nama_alternatif}}" readonly>
                     </div>
                     
