@@ -39,16 +39,6 @@
                                             <input type="text" class="form-control" name="nama_alternatif" id="nama_alternatif" >
                                         </div>
 
-                                        {{-- <div class="form-group">
-                                            <label for="">Alamat</label>
-                                            <input type="text" class="form-control" name="alamat" id="" >
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label for="">No HP</label>
-                                            <input type="number" class="form-control" name="no_hp" id="" >
-                                        </div>
-                                         --}}
                                     
                                         <button type="submit" class="btn btn-success">Submit</button>
                                     </form>

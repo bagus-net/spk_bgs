@@ -73,6 +73,9 @@
                                     <a class="nav-link mb-2" id="v-pills-vga-tab" data-bs-toggle="pill" 
                                     href="#v-pills-vga"role="tab" aria-controls="v-pills-vga" 
                                         aria-selected="false">VGA</a>
+                                        <a class="nav-link mb-2" id="v-pills-garansi-tab" data-bs-toggle="pill" 
+                                    href="#v-pills-garansi"role="tab" aria-controls="v-pills-garansi" 
+                                        aria-selected="false">Garansi</a>
                                 </div>
                             </div>
                             <div class="col-md-9">
@@ -344,7 +347,55 @@
                                                             </div>
                                                         </div>
                                                 </div>
-                                </div>
+                               
+
+
+                                <div class="tab-pane fade" id="v-pills-garansi" role="tabpanel"
+                                aria-labelledby="v-pills-garansi-tab">
+                                <div class="row">
+                                    {{-- <div class="col-XL-3"> --}}
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <h4 class="card-title">Nilai Kriteria Garansi</h4>
+                            
+                                                <div class="table-responsive">
+                                                    <table class="table mb-0">
+                            
+                                                        <thead class="table-light">
+                                                            <tr>
+                                                                <th>No</th>
+                                                                <th>Bobot</th>
+                                                                <th>Garansi</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <th scope="row">1</th>
+                                                                <td>1</td>
+                                                                <td>3 Bulan</td>
+                                                              
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row">2</th>
+                                                                <td>3</td>
+                                                                <td>6 Bulan</td>
+                                                            </tr>
+
+                                                            <tr>
+                                                                <th scope="row">3</th>
+                                                                <td>5</td>
+                                                                <td>1 Tahun</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                            </div>
+            </div>
+
+
                             </div>
                         </div>
                     </div>
