@@ -11,7 +11,7 @@
  Target Server Version : 50742
  File Encoding         : 65001
 
- Date: 18/07/2023 13:31:59
+ Date: 18/07/2023 14:42:08
 */
 
 SET NAMES utf8mb4;
@@ -30,16 +30,16 @@ CREATE TABLE `alternatives`  (
 -- ----------------------------
 -- Records of alternatives
 -- ----------------------------
-INSERT INTO `alternatives` VALUES (4, 'PC Rakitan Home & School INTEL |P.G G6405| - | 8GB | 120gbSSD \r\n');
-INSERT INTO `alternatives` VALUES (5, 'PC Rakitan Home & School AMD | R3 3200G | - | 8GB |120gbSSD \r\n');
-INSERT INTO `alternatives` VALUES (6, 'PC Rakitan Admin & Office AMD | R3 3200G | - | 8GB |120gbSSD \r\n');
-INSERT INTO `alternatives` VALUES (7, 'PC Rakitan Medium AMD | R3 4350G | - | 8GB | 256gbSSD');
-INSERT INTO `alternatives` VALUES (8, 'PC Rakitan Enter Upstream AMD | R3 3200G | - | 8GB |256gbSSD ');
-INSERT INTO `alternatives` VALUES (9, 'IMBA Legacy PC | i5-750 | GT 7302gb | 8GB | 120gbSSD | Multimedia Desktop');
-INSERT INTO `alternatives` VALUES (10, 'Mini PC Haswel Gen 4 | i3-4160 | - | 8GB | 512gbSSD ');
-INSERT INTO `alternatives` VALUES (11, 'PC Gaming |P.G G6405| SSD 240Gb | Ram 8Gb | VGA 2GB DDR5');
-INSERT INTO `alternatives` VALUES (12, 'Pc Rakitan Corei3 | i3-4130 | GT1030 | 8GB | 256gbSSD ');
-INSERT INTO `alternatives` VALUES (13, 'PC GAMING RAKITAN OFFICE|i3-540|VGA 2GB|8GB|120GB');
+INSERT INTO `alternatives` VALUES (4, 'PC Rakitan Home & School INTEL |P.G G6405| - | 8GB | 120gbSSD | 6 BLN');
+INSERT INTO `alternatives` VALUES (5, 'PC Rakitan Home & School AMD | R3 3200G | - | 8GB |120gbSSD | 6 BLN');
+INSERT INTO `alternatives` VALUES (6, 'PC Rakitan Admin & Office AMD | R3 3200G | - | 8GB |120gbSSD | 6 BLN');
+INSERT INTO `alternatives` VALUES (7, 'PC Rakitan Medium AMD | R3 4350G | - | 8GB | 256gbSSD| 6 BLN');
+INSERT INTO `alternatives` VALUES (8, 'PC Rakitan Enter Upstream AMD | R3 3200G | - | 8GB |256gbSSD | 6 BLN');
+INSERT INTO `alternatives` VALUES (9, 'IMBA Legacy PC | i5-750 | GT 7302gb | 8GB | 120gbSSD | Multimedia Desktop | 6 BLN');
+INSERT INTO `alternatives` VALUES (10, 'Mini PC Haswel Gen 4 | i3-4160 | - | 8GB | 512gbSSD | 6 BLN');
+INSERT INTO `alternatives` VALUES (11, 'PC Gaming |P.G G6405| SSD 240Gb | Ram 8Gb | VGA 2GB DDR5 | 6 BLN');
+INSERT INTO `alternatives` VALUES (12, 'Pc Rakitan Corei3 | i3-4130 | GT1030 | 8GB | 256gbSSD | 6 BLN');
+INSERT INTO `alternatives` VALUES (13, 'PC GAMING RAKITAN OFFICE|i3-540|VGA 2GB|8GB|120GB | 6 BLN');
 
 -- ----------------------------
 -- Table structure for criterias
