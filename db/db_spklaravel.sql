@@ -11,7 +11,7 @@
  Target Server Version : 50742
  File Encoding         : 65001
 
- Date: 19/06/2023 15:23:39
+ Date: 18/07/2023 13:31:59
 */
 
 SET NAMES utf8mb4;
@@ -52,7 +52,7 @@ CREATE TABLE `criterias`  (
   `atribut` enum('1','2') CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
   `bobot` enum('1','2','3','4','5') CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
   PRIMARY KEY (`id_kriteria`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 7 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of criterias
@@ -62,21 +62,32 @@ INSERT INTO `criterias` VALUES (2, 'c2', 'Ram', '1', '3');
 INSERT INTO `criterias` VALUES (3, 'c3', 'Harga', '2', '5');
 INSERT INTO `criterias` VALUES (4, 'c4', 'Storage', '1', '3');
 INSERT INTO `criterias` VALUES (5, 'c5', 'VGA', '1', '2');
+INSERT INTO `criterias` VALUES (6, 'c6', 'Garansi', '1', '3');
 
 -- ----------------------------
 -- Table structure for hasils
 -- ----------------------------
 DROP TABLE IF EXISTS `hasils`;
 CREATE TABLE `hasils`  (
-  `id_hasil` int(11) NOT NULL,
+  `id_hasil` int(11) NOT NULL AUTO_INCREMENT,
   `alternatif` varchar(255) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
   `hasil` float NULL DEFAULT NULL,
   PRIMARY KEY (`id_hasil`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 11 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of hasils
 -- ----------------------------
+INSERT INTO `hasils` VALUES (1, '4', 0.0966049);
+INSERT INTO `hasils` VALUES (2, '5', 0.0993524);
+INSERT INTO `hasils` VALUES (3, '6', 0.0993524);
+INSERT INTO `hasils` VALUES (4, '7', 0.0844467);
+INSERT INTO `hasils` VALUES (5, '8', 0.0844467);
+INSERT INTO `hasils` VALUES (6, '9', 0.10726);
+INSERT INTO `hasils` VALUES (7, '10', 0.116235);
+INSERT INTO `hasils` VALUES (8, '11', 0.100408);
+INSERT INTO `hasils` VALUES (9, '12', 0.0937611);
+INSERT INTO `hasils` VALUES (10, '13', 0.118132);
 
 -- ----------------------------
 -- Table structure for migrations
@@ -121,7 +132,7 @@ CREATE TABLE `relations`  (
   `kriteria` varchar(225) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
   `nilai` float NOT NULL,
   PRIMARY KEY (`id_relasi`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 121 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 131 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of relations
@@ -196,6 +207,16 @@ INSERT INTO `relations` VALUES (117, '10', '2', 3);
 INSERT INTO `relations` VALUES (118, '10', '3', 3);
 INSERT INTO `relations` VALUES (119, '10', '4', 3);
 INSERT INTO `relations` VALUES (120, '10', '5', 1);
+INSERT INTO `relations` VALUES (121, '4', '6', 3);
+INSERT INTO `relations` VALUES (122, '5', '6', 3);
+INSERT INTO `relations` VALUES (123, '6', '6', 3);
+INSERT INTO `relations` VALUES (124, '7', '6', 3);
+INSERT INTO `relations` VALUES (125, '9', '6', 3);
+INSERT INTO `relations` VALUES (126, '11', '6', 3);
+INSERT INTO `relations` VALUES (127, '10', '6', 3);
+INSERT INTO `relations` VALUES (128, '12', '6', 3);
+INSERT INTO `relations` VALUES (129, '13', '6', 3);
+INSERT INTO `relations` VALUES (130, '8', '6', 3);
 
 -- ----------------------------
 -- Table structure for results
@@ -237,13 +258,13 @@ CREATE TABLE `users`  (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `users_email_unique`(`email`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 7 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of users
 -- ----------------------------
-INSERT INTO `users` VALUES (3, 'bagus', 'bagussetyawan551@gmail.com', 'admin', '$2y$10$W7ViBUBAWZ1wTHr/0vIctuv5BpSYcpBIUsSeSad.lQhoMTdiT5iUW', 'MICpbKDrru3l6P7c09vjEEDr5elWAkWdNfe11wAwjfkdGLs9FWKIu5c348Xc', '2023-06-05 10:42:27', '2023-06-16 01:18:44');
+INSERT INTO `users` VALUES (3, 'bagus', 'bagussetyawan551@gmail.com', 'admin', '$2y$10$W7ViBUBAWZ1wTHr/0vIctuv5BpSYcpBIUsSeSad.lQhoMTdiT5iUW', 'zctuOXZZLtDJTM5f0OLdyPL787IhYPMLHXLhUEHvm9OOi9YEKfETHtHRr38i', '2023-06-05 10:42:27', '2023-06-27 13:43:46');
 INSERT INTO `users` VALUES (4, 'user', 'user@gmail.com', 'admin', '$2y$10$dxkY41cJ8Xr6JzDY9TKEMO97.kerqctm91hru.Zv.IHO0zaDGYQIu', NULL, '2023-06-05 11:45:24', '2023-06-05 11:45:24');
-INSERT INTO `users` VALUES (5, 'arifin', 'arifin@gmail.com', 'kepala_bidang', '$2y$10$zcwvPb5oc06skyREnykC0O8QbEti5XxWcLuLj5i2.JkWQ3rrMRw9S', NULL, '2023-06-16 01:18:39', '2023-06-16 01:18:39');
+INSERT INTO `users` VALUES (6, 'raka', 'raka@gmail.com', 'admin', '$2y$10$gvMpyqTnDvi/pYBlEnloUOwtWm2ivdIKuDQklnWLxPu1eLNAGWn1e', NULL, '2023-06-27 13:43:02', '2023-06-27 13:43:02');
 
 SET FOREIGN_KEY_CHECKS = 1;
