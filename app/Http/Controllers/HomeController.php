@@ -9,6 +9,8 @@ use App\Relation;
 use App\Result;
 use App\Hasil;
 use App\User;
+use Illuminate\Support\Facades\DB;
+
 
 
 class HomeController extends Controller
@@ -18,11 +20,6 @@ class HomeController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
     /**
      * Show the application dashboard.
      *
@@ -30,22 +27,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $hasilwp = Hasil::all();
-        $hasiltopsis = Result::all();
-        $alternatif = Alternative::all();
-        $relasi = Relation::all();
-        $kriteria = Criteria::all();
-        $relasi = Relation::all();
-        $user = User::all();
-
-    $jmlh_bobot = $kriteria->sum('bobot');
-    $jmlh_kriteria = $kriteria->count();
-    $jmlh_alternatif = $alternatif->count();
-    $jmlh_user= $user->count();
-    $rankingwp = Hasil::orderBy('hasil','desc')->take(2)->get();
-    $ranking = Result::orderBy('hasil','desc')->take(2)->get();
-
-// dd ($ranking);
-        return view('home', compact('hasiltopsis','hasilwp','kriteria', 'alternatif', 'relasi', 'jmlh_kriteria', 'jmlh_alternatif','jmlh_user','rankingwp','ranking'));
+        $res_dokter = DB::select('SELECT * FROM public.mcust');
+        dump($res_dokter);
     }
 }

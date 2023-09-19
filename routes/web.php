@@ -15,42 +15,38 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('/welcome');
-});
+// Route::get('/', function () {
+//     return view('/welcome');
+// });
 
-Auth::routes();
+// Auth::routes();
 
-Route::get('/home', 'HomeController@index');
+Route::get('/', 'HomeController@index');
 
 Route::group(['prefix' => 'kriteria'], function () {
-	Route::get('/', 'KriteriaController@index');
-	Route::post('/tambah', 'KriteriaController@insert');
-	Route::get('/edit/{id}', 'KriteriaController@edit');
-	Route::post('/update', 'KriteriaController@update');
-	Route::get('/hapus/{id}', 'KriteriaController@delete');
+    Route::get('/', 'KriteriaController@index');
 });
 
-Route::group(['prefix' => 'alternatif'], function () {
-	Route::get('/', 'AlternatifController@index');
-	Route::get('/penilaian/{alternatif}', 'AlternatifController@value');
-	Route::post('/nilai_simpan', 'AlternatifController@store');
-	Route::get('/detail/{id}', 'AlternatifController@show');
-	Route::post('/tambah', 'AlternatifController@insert');
-	Route::get('/edit/{id}', 'AlternatifController@edit');
-	Route::post('/update', 'AlternatifController@update');
-	Route::get('/hapus/{id}', 'AlternatifController@delete');
-});
+// Route::group(['prefix' => 'alternatif'], function () {
+// 	Route::get('/', 'AlternatifController@index');
+// 	Route::get('/penilaian/{alternatif}', 'AlternatifController@value');
+// 	Route::post('/nilai_simpan', 'AlternatifController@store');
+// 	Route::get('/detail/{id}', 'AlternatifController@show');
+// 	Route::post('/tambah', 'AlternatifController@insert');
+// 	Route::get('/edit/{id}', 'AlternatifController@edit');
+// 	Route::post('/update', 'AlternatifController@update');
+// 	Route::get('/hapus/{id}', 'AlternatifController@delete');
+// });
 
-Route::group(['prefix' => 'user'], function () {
-	Route::get('/', 'UserController@index');
-	Route::post('/tambah', 'UserController@insert');
-	Route::get('/edit/{id}', 'UserController@edit');
-	Route::get('/detail/{id}', 'UserController@show');
-	Route::post('/update', 'UserController@update');
-	Route::get('/hapus/{id}', 'UserController@delete');
-});
+// Route::group(['prefix' => 'user'], function () {
+// 	Route::get('/', 'UserController@index');
+// 	Route::post('/tambah', 'UserController@insert');
+// 	Route::get('/edit/{id}', 'UserController@edit');
+// 	Route::get('/detail/{id}', 'UserController@show');
+// 	Route::post('/update', 'UserController@update');
+// 	Route::get('/hapus/{id}', 'UserController@delete');
+// });
 
-Route::get('hasil', 'HasilController@index');
-Route::get('hasilwp', 'HasilWPController@index');
-Route::get('hasildua', 'HasilMetodeController@index');
+// Route::get('hasil', 'HasilController@index');
+// Route::get('hasilwp', 'HasilWPController@index');
+// Route::get('hasildua', 'HasilMetodeController@index');

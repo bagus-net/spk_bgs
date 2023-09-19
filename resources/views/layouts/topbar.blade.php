@@ -27,24 +27,22 @@
             </button>
 
             <!-- App Search-->
-           
+
         </div>
 
         <div class="d-flex">
 
             <div class="dropdown d-inline-block d-lg-none ms-2">
-                <button type="button" class="btn header-item noti-icon waves-effect" id="page-header-search-dropdown"
-                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <button type="button" class="btn header-item noti-icon waves-effect" id="page-header-search-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <i class="uil-search"></i>
                 </button>
-                <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0"
-                    aria-labelledby="page-header-search-dropdown">
-                    
-                    
+                <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0" aria-labelledby="page-header-search-dropdown">
+
+
                 </div>
             </div>
 
-          
+
 
             <div class="dropdown d-none d-lg-inline-block ms-1">
                 <button type="button" class="btn header-item noti-icon waves-effect" data-bs-toggle="fullscreen">
@@ -56,7 +54,7 @@
                 @auth
                   <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Welcome back, {{ auth()->user()->name }}
+                      Welcome back, 
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                       <li><a class="dropdown-item" href="/dashboard"><i class="bi bi-layout-text-sidebar-reverse"></i> My Dashboard</a></li>
@@ -71,42 +69,42 @@
                   </li> --}}
 
             <div class="dropdown d-inline-block">
-                <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"
-                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     {{-- <img class="rounded-circle header-profile-user" src="{{ URL::asset('/assets/images/users/avatar-6.jpg') }}"
-                        alt="Header Avatar"> --}}
-                    <span class="d-none d-xl-inline-block ms-1 fw-medium font-size-15">{{Str::ucfirst(Auth::user()->name)}}</span> 
+                    alt="Header Avatar"> --}}
+                    <span class="d-none d-xl-inline-block ms-1 fw-medium font-size-15"></span>
                     <i class="uil-angle-down d-none d-xl-inline-block font-size-17"></i>
                 </button>
                 <div class="dropdown-menu dropdown-menu-end">
                     <!-- item-->
-                    <a class="dropdown-item" href="/home"><i class="uil-home-alt font-size-18 align-middle text-muted me-1"></i> <span class="align-middle">@lang(   'Dashboard')</span></a>
-                    
+                    <a class="dropdown-item" href="/home"><i class="uil-home-alt font-size-18 align-middle text-muted me-1"></i> <span class="align-middle">@lang( 'Dashboard')</span></a>
+
                     <form action="/logout" method="post">
                         {{ csrf_field() }}
 
-                    <button type ="submit" class="dropdown-item"><i class="uil uil-sign-out-alt"></i> Logout </button></span></a>
+                        <button type="submit" class="dropdown-item"><i class="uil uil-sign-out-alt"></i> Logout </button></span></a>
                     </form>
-                    
-                   
+
+
                     {{-- <a class="dropdown-item" href="#"><i class="uil uil-wallet font-size-18 align-middle me-1 text-muted"></i> <span class="align-middle">@lang('translation.My_Wallet')</span></a>
                     <a class="dropdown-item d-block" href="#"><i class="uil uil-cog font-size-18 align-middle me-1 text-muted"></i> <span class="align-middle">@lang('translation.Settings')</span> <span class="badge bg-soft-success rounded-pill mt-1 ms-2">03</span></a>
                     <a class="dropdown-item" href="#"><i class="uil uil-lock-alt font-size-18 align-middle me-1 text-muted"></i> <span class="align-middle">@lang('translation.Lock_screen')</span></a> --}}
-                   
+
                     {{-- <a class="dropdown-item" onclick="event.preventDefault(); document.getElementById('logout').submit();"><i class="uil uil-sign-out-alt font-size-18 align-middle me-1 text-muted"></i> <span class="align-middle">@lang('translation.Sign_out')</span></a>
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                        @csrf 
+                    @csrf
                     </form>
                 </div> --}}
-            </div></div>
-           
-
-            <div class="dropdown d-inline-block">
-                <button type="button" class="btn header-item noti-icon right-bar-toggle waves-effect">
-                    <i class="uil-cog"></i>
-                </button>
             </div>
-            
         </div>
+
+
+        <div class="dropdown d-inline-block">
+            <button type="button" class="btn header-item noti-icon right-bar-toggle waves-effect">
+                <i class="uil-cog"></i>
+            </button>
+        </div>
+
+    </div>
     </div>
 </header>

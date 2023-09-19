@@ -6,9 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Criteria extends Model
 {
+    protected $table = 'mjenis';
     protected $fillable = [
-        'kode', 'nama_kriteria', 'atribut', 'bobot',
+        'kode', 'keterangan', 'klp'
     ];
     public $timestamps = false; //karena tabel register tidak terdapat field created_at dan updated_at
-    protected $primaryKey = 'id_kriteria';
 }
