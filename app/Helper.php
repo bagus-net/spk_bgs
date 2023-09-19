@@ -4,7 +4,7 @@ namespace App;
 use App\Alternative;
 use App\Criteria;
 use App\Relation;
-use App\User;
+use App\Users;
 
 use Illuminate\Database\Eloquent\Model;
 class Helper extends Model
@@ -59,7 +59,7 @@ class Helper extends Model
 		return $data->atribut;
 	}
 
-	// public static function jabatan($id)
+	// public static function level($id)
 	// {
 	// 	$data = User::find($id);
 	// 	return $data->jabatan;
@@ -91,18 +91,18 @@ class Helper extends Model
 
 	public static function name($id)
 	{
-		$data = User::find($id);
-		return $data->name;
+		$data = Users::find($id);
+		return $data->nama;
 	}
-	public static function email($id)
+	public static function nama($id)
 	{
-		$data = User::find($id);
-		return $data->email;
+		$data = Users::find($id);
+		return $data->nama;
 	}
 	public static function password($id)
 	{
-		$data = User::find($id);
-		return $data->password;
+		$data = Users::find($id);
+		return $data->pass;
 	}
 
 	

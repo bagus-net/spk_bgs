@@ -24,6 +24,8 @@ class Users extends Model
      *
      * @var array
      */
+
+     protected $primaryKey = 'id';
     protected $hidden = [
         'password', 'remember_token',
     ];

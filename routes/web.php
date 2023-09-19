@@ -38,14 +38,14 @@ Route::group(['prefix' => 'kriteria'], function () {
 // 	Route::get('/hapus/{id}', 'AlternatifController@delete');
 // });
 
-// Route::group(['prefix' => 'user'], function () {
-// 	Route::get('/', 'UserController@index');
+Route::group(['prefix' => 'user'], function () {
+	Route::get('/', 'UserController@index');
 // 	Route::post('/tambah', 'UserController@insert');
-// 	Route::get('/edit/{id}', 'UserController@edit');
+	Route::get('/edit/{id}', 'UserController@edit');
 // 	Route::get('/detail/{id}', 'UserController@show');
-// 	Route::post('/update', 'UserController@update');
+	Route::post('/update', 'UserController@update');
 // 	Route::get('/hapus/{id}', 'UserController@delete');
-// });
+});
 
 // Route::get('hasil', 'HasilController@index');
 // Route::get('hasilwp', 'HasilWPController@index');

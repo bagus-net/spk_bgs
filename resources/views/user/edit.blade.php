@@ -27,25 +27,32 @@
                         <input type="hidden" name="id" value="{{$data->id}}">
                         <div class="form-group">
                             <label for="">Nama Lengkap</label>
-                            <input type="text" class="form-control" name="name" value="{{$data->name}}" placeholder="Input field">
+                            <input type="text" class="form-control" name="nama" value="{{$data->nama}}" id="nama" placeholder="Input field">
                         </div>
-                        <div class="form-group">
-                            <label for="">Email</label>
-                            <input type="text" class="form-control" name="email" value="{{$data->email}}" placeholder="Input field">
-                        </div>
+                        {{-- <div class="form-group">
+                            <label for="">Level</label>
+                            <input type="text" class="form-control" name="level" value="{{$data->level}}" placeholder="Input field">
+                        </div> --}}
+
+                        {{-- <div class="form-group">
+                            <label for="">Level</label>
+                            <select class="form-control" name="level">
+                                <option value="{{$data->level}}">{{\App\Helper::level($data->level)}}</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                            </select>
+                        </div> --}}
 
                         <div class="form-group">
-                            <label for="">Jabatan</label>
-                            <select class="form-control" name="jabatan">
-                                <option value="{{$data->jabatan}}">{{\App\Helper::jabatan($data->jabatan)}}</option>
-                                <option value="admin">Admin</option>
-                                <option value="kepala_bidang">Kepala Bidang</option>
-                            </select>
+                            <label for="">Keterangan</label>
+                            <input type="text" class="form-control" name="keterangan" value="{{$data->keterangan}}" placeholder="Input field" >
                         </div>
 
                         <label for="example-text-input" class="col-md-2 col-form-label">Password : </label>
                         <div class="col-md-10">
-                            <input type="password" name="password" class="form-control" value="" id="password" placeholder="Enter password" required>
+                            <input type="password" name="pass" class="form-control" value="{{$data->pass}}" id="" placeholder="Enter password" required>
                         </div>
 
                         

@@ -1,12 +1,13 @@
 
 @extends('layouts.master')
 @section('title')
-    @lang('translation.Datatables')
+@lang('translation.Datatables')
 @endsection
 @section('css')
-    <!-- DataTables -->
-    <link href="{{ URL::asset('/assets/libs/datatables/datatables.min.css') }}" rel="stylesheet" type="text/css" />
+<!-- DataTables -->
+<link href="{{ URL::asset('/assets/libs/datatables/datatables.min.css') }}" rel="stylesheet" type="text/css" />
 @endsection
+
 
 @section('content')
 
@@ -76,40 +77,63 @@
                             </div>
                         </div>
                     </div>
-                    <table class="table table-hover">
+
+
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <div class="table-responsive">
+
+                    <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+
                         <thead>
-                          <tr>
-                            <th>No</th>
-                            <th>Nama Lengkap</th>
-                            <th>Email</th>
-                            <th>Jabatan</th>
-                            <th>Aksi</th>
-                          </tr>
+                            <tr>
+                                <th>No</th>
+                                <th>Nama</th>
+                                <th>password</th>
+                                <th>Level</th>
+                                <th>Keterangan</th>
+                                <th>Dibuat Oleh</th>
+                                <th>Tanggal Dibuat</th>
+                                <th>Aksi</th>
+                            </tr>
                         </thead>
-                        @foreach ($data as $key=>$value)
-                            <tbody>
+                        <tbody>
+                            @foreach ($data as $key=>$value)
+                            <tr>
+
                                 <td>{{$key+1}}</td>
-                                <td>{{$value->name}}</td>
-                                <td>{{$value->email}}</td>
-                                <td>{{$value->jabatan}}</td>
+                                <td>{{$value->nama}}</td>
+                                <td>{{$value->pass}}</td>
+                                <td>{{$value->level}}</td>
+                                <td>{{$value->keterangan}}</td>
+                                <td>{{$value->modifyby}}</td>
+                                <td>{{$value->modifyon}}</td>
                                 <td>
+
                                     <a href="{{ url('user/detail/'.$value->id) }}" class="btn btn-info-xs btn-soft-xs-info waves-effect waves-light"><i class="uil-eye"></i></a>
                                     <a href="{{ url('user/edit/'.$value->id) }}" class="btn btn-xs btn-info"><i class="uil-pen"></i></a>
                                     <a href="{{ url('user/hapus/'.$value->id) }}" class="btn btn-xs btn-danger"><i class="fa fa-trash"></i></a>
+                                    </form>
                                 </td>
-                            </tbody>
-                        @endforeach
-                      </table>
+
+
+                            </tr>
+                            @endforeach
+
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
-    </div>
-</div>
+    </div> <!-- end col -->
+</div> <!-- end row -->
 @endsection
 @section('script')
-    <script src="{{ URL::asset('/assets/libs/datatables/datatables.min.js') }}"></script>
-    <script src="{{ URL::asset('/assets/libs/jszip/jszip.min.js') }}"></script>
-    <script src="{{ URL::asset('/assets/libs/pdfmake/pdfmake.min.js') }}"></script>
-    <script src="{{ URL::asset('/assets/js/pages/datatables.init.js') }}"></script>
-@endsection
+<script src="{{ URL::asset('/assets/libs/datatables/datatables.min.js') }}"></script>
+<script src="{{ URL::asset('/assets/libs/jszip/jszip.min.js') }}"></script>
+<script src="{{ URL::asset('/assets/libs/pdfmake/pdfmake.min.js') }}"></script>
+<script src="{{ URL::asset('/assets/js/pages/datatables.init.js') }}"></script>
 
+@endsection
