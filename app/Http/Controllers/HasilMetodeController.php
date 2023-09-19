@@ -23,7 +23,7 @@ class HasilMetodeController extends Controller
         $alternatif = Alternative::all();
         $relasi = Relation::all();
         $kriteria = Criteria::all();
-
+        
 
         $rankingwp = Hasil::orderBy('hasil','desc')->take(2)->get();
         $ranking = Result::orderBy('hasil','desc')->take(2)->get();

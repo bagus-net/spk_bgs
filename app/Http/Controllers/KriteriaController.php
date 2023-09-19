@@ -4,16 +4,21 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Criteria;
+use Illuminate\Support\Facades\DB;
 
 class KriteriaController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
+	// utk auth login
+    // public function __construct()
+    // {
+    //     $this->middleware('auth');
+    // }
 
     public function index()
     {
+		$res_ftkp = DB::select('SELECT * FROM public.mcust' );
+    	// return view('ftkp.index', compact('res_ftkp'));
+        dump ($res_ftkp);
     	$data = Criteria::all();
     	return view('kriteria.home', compact('data'));
     }
